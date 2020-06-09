@@ -1,0 +1,35 @@
+.header{
+    width: 100%;
+    height: 25rem;
+    background-color: darkslategrey;
+}
+
+.claim{
+    width: 100%;
+    height: 11rem;
+    background-color: #219692; 
+}
+
+.hello{
+   width: 100%;
+    height: 11rem;
+    background-color: #960af4; 
+} 
+
+.loisirs{
+   width: 100%;
+    height: 12.1rem;
+    background-color: #34a116; 
+}
+
+.form_exp{
+    width: 100%;
+    height: 32rem;
+    background-color: #219692; 
+}
+
+.api_map{
+    width: 100%;
+    height: 18rem;
+    background-color: #34a116; 
+}
