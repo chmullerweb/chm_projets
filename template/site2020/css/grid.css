@@ -3,7 +3,7 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(7, auto);
+    grid-template-rows: repeat(5, auto);
     grid-gap: 32px;
     margin: 32px;
 }
@@ -96,16 +96,6 @@
     grid-row-start: 9;
 }
 
-.row10 {
-    grid-row-start: 10;
-}
-
-.row11 {
-    grid-row-start: 11;
-}
-
-.row12 {
-    grid-row-start: 11;
 }
 
 /*-------------*/

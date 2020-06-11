@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+$title = "Charlotte Muller";
     
 $_dossier_template = "template/site2020/"; // repertoire dans lequel j'ai mis l'ensemble des gabarits de mon site
 
