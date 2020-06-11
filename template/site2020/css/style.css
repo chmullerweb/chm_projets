@@ -1,6 +1,13 @@
+body{
+     background: url("../img/thomas-verbruggen-5A06OWU6Wuc-unsplash.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .header{
     background: rgba(47, 79, 79, 0.8);
-    
 }
 
 .claim{
