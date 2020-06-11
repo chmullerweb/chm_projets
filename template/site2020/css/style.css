@@ -4,6 +4,11 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: Raleway;
+}
+
+h1, nav{
+    font-family: Kurale;
 }
 
 .header{
@@ -42,7 +47,7 @@ a{
 }
 
 a:hover{
-    border-bottom: 2px rgb(52, 161, 22
+    border-bottom: 2px rgb(52, 161, 22) solid;
 }
 
 .flex{

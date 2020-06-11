@@ -9,8 +9,8 @@
     
     
     <!-- ////   CSS   //// -->
-    <link rel="stylesheet" href="http://localhost/coursphp/CV/css/cssreset.css">
-    <link rel="stylesheet" href="http://localhost/coursphp/CV/css/grid.css">
+    <link rel="stylesheet" href="template/site2020/css/cssreset.css">
+    <link rel="stylesheet" href="template/site2020/css/grid.css">
     <link rel="stylesheet" href="template/site2020/css/style.css">
 
 
