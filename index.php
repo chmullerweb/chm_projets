@@ -54,7 +54,7 @@
     </div>
     
     <div class="profil-pix-bloc">
-        <img src="template/site2020/img/Charlotte_resize.jpg" alt="" style="width:100%;">
+        <img class="profil-pix" src="template/site2020/img/Charlotte_resize.jpg" alt="">
     </div>
     
     <div class="surprise">

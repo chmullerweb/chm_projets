@@ -68,6 +68,15 @@ body{
     grid-column-start: 8;
     grid-column-end: span 5;
 }
+    
+.profil-pix{
+    width: 80%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .surprise{
     width: 100%;
@@ -109,6 +118,10 @@ body{
         grid-row-start: 2;
         grid-column-start: 6;
         grid-column-end: span 7;
+    }
+    
+    .profil-pix{
+        width: 100%;
     }
     
     .surprise{
