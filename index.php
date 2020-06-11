@@ -11,7 +11,7 @@
     <!-- ////   CSS   //// -->
     <link rel="stylesheet" href="http://localhost/coursphp/CV/css/cssreset.css">
     <link rel="stylesheet" href="http://localhost/coursphp/CV/css/grid.css">
-    <link rel="stylesheet" href="http://localhost/coursphp/CV/css/style.css">
+    <link rel="stylesheet" href="template/site2020/css/style.css">
 
 
     <!-- ////   PATTERN   //// -->
@@ -27,39 +27,39 @@
     
     
        
-    <header class="header row1 row-sp2 col3">
+    <header class="header">
                <h1>Charlotte Muller</h1> 
-               <h2>Développeuse Web Front-End</h2>    
+               <h2>Développeuse Web Fullstack</h2>    
 
     </header>
     
-    <div class="row1 col6 claim">
-        <p> Vers l'infini et au-delà</p>
+    <div class="claim"> 
+        <p> everyone can coding</p> <!--select quote from accueil*/-->
     </div>
     
-    <div class="hello row1 row-sp2 col-st10 col3">
-        
+    <div class="hello">
+        <h2>Hello</h2>
+        <p>Les images parlent plus que les mots, découvrez mes projets en photo.</p>
     </div>
     
-    <div class="loisirs row2 col4">
-        <ul>
-            <li>Randonée</li>
-            <li>Course à pied</li>
-            <li>Cuisine</li>
-            <li>Le Catch</li>
-            <li>Mon chien</li>
-            <li>Shopping d'occasion</li>
-            <li>La bière</li>
+    <div class="hobbies">
+        <h2>Mes autres passions :</h2>
+           <ul>
+            <li>Blogging Wordpress SEO pour Bijoux Robin Paris</li>
+            <li>Bénévolat Maison Zéro Déchet</li>
+            <li>Pratique et accueil en salle de sport Swedish Fit</li>
+            <li>Lecture Bandes Dessinées</li>
             <li>Le Perrier menthe</li>
         </ul>
     </div>
     
-    <div class="form_exp row2 row-sp2 col-st8 col5">
-        
+    <div class="profil-pix-bloc">
+        <img src="template/site2020/img/Charlotte_resize.jpg" alt="" style="width:100%;">
     </div>
     
-    <div class="api_map row3 col7">
-        
+    <div class="surprise">
+       <!--Faire un bouton : une autre citation et requête avec fetch random-->
+        <button class="randomquote">Surprise !</button>
     </div>
 
 

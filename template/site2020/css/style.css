@@ -1,35 +1,99 @@
+@media screen and (max-width: 640px) {
+
+    .header{
+        grid-row-start: 1;
+        grid-column-end: span 12;
+    } 
+    
+    .hello{
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: span 5;
+    }
+    
+    .claim{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: span 12;
+    }
+    
+    .hobbies{
+        grid-row-start: 4;
+        grid-column-start: 1;
+        grid-column-end: span 12;
+    }
+    
+    .profil-pix-bloc{
+        grid-row-start: 2;
+        grid-column-start: 6;
+        grid-column-end: span 7;
+    }
+    
+    .surprise{
+        grid-row-start: 5;
+        grid-row-end: span 3;
+        grid-column-start: 1;
+        grid-column-end: span 12;
+    }
+}
+    
+    
+    
+
+/* Ecran à partir de 641px */
+
+
 .header{
+    background: darkslategrey;
     width: 100%;
     height: 25rem;
     background-color: darkslategrey;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-end: span 3;
 }
 
 .claim{
     width: 100%;
     height: 11rem;
     background-color: #219692; 
+    grid-row-start: 1;
+    grid-column-end: span 6;
+
 }
 
 .hello{
    width: 100%;
     height: 11rem;
-    background-color: #960af4; 
+    background-color: #960af4;
+    grid-row-start: 1;
+    grid-column-start: 10;
+    grid-column-end: span 3;
 } 
 
 .loisirs{
    width: 100%;
     height: 12.1rem;
-    background-color: #34a116; 
+    background-color: #34a116;
+/*
+    row2 col4
+*/
 }
 
-.form_exp{
+.profil-pix-bloc{
     width: 100%;
     height: 32rem;
     background-color: #219692; 
+/*
+    row2 row-sp2 col-st8 col5
+*/
 }
 
-.api_map{
+.surprise{
     width: 100%;
     height: 18rem;
-    background-color: #34a116; 
+    background-color: #34a116;
+/*
+    row3 col7
+*/
 }
