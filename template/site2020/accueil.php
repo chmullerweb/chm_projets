@@ -2,22 +2,22 @@
 
     
        
-    <section class="header">
+    <section class="header bg-sapin">
                <h1>Charlotte Muller</h1> 
                <h2>Développeuse Web Fullstack</h2>    
 
     </section>
     
-    <div class="claim"> 
+    <div class="claim bg-bleu"> 
         <p> everyone can coding</p> <!--select quote from accueil*/-->
     </div>
     
-    <div class="hello">
+    <div class="hello bg-violet">
         <h2>Hello</h2>
         <p>Les images parlent plus que les mots, découvrez mes projets en photo.</p>
     </div>
     
-    <div class="hobbies">
+    <div class="hobbies bg-vert">
         <h2>Mes autres passions :</h2>
            <ul>
             <li>Blogging Wordpress SEO pour Bijoux Robin Paris</li>
@@ -32,7 +32,7 @@
         <img class="profil-pix" src="<?php echo $_dossier_template ?>img/Charlotte_resize.jpg" alt="">
     </div>
     
-    <div class="surprise">
+    <div class="surprise bg-vert">
        <!--Faire un bouton : une autre citation et requête avec fetch random-->
         <button class="randomquote">Surprise !</button>
     </div>

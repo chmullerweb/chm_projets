@@ -9,97 +9,137 @@
 }
 
 
-/*------- COLONNES ----------*/
-.col-st1{
-    grid-column-start: 1;
-}
+/* Ecran à partir de 641px */
+@media screen and (min-width: 641px) {
 
-.col-st2 {
-    grid-column-start: 2;
-}
 
-.col-st3 {
-    grid-column-start: 3;
-}
+/*///// ACCUEIL /////*/
 
-.col-st5 {
-    grid-column-start: 5;
-}
-
-.col-st8 {
-    grid-column-start: 8;
-}
-
-.col-st10 {
-    grid-column-start: 10;
-}
-
-.col3 {
+.header{
+    width: 100%;
+    grid-row-start: 2;
+    grid-row-end: span 2;
     grid-column-end: span 3;
 }
 
-.col4 {
+.claim{
+    width: 100%;
+    height: 11rem;
+    grid-row-start: 2;
+    grid-column-end: span 6;
+
+}
+
+.hello{
+   width: 100%;
+    height: 11rem;
+    grid-row-start: 2;
+    grid-column-start: 10;
+    grid-column-end: span 3;
+} 
+
+.hobbies{
+   width: 100%;
+    height: 12.1rem;
+    grid-row-start: 3;
+    grid-column-start: 4;
     grid-column-end: span 4;
 }
 
-.col5 {
+.profil-pix-bloc{
+    width: 100%;
+    height: 32rem;
+    grid-row-start: 3;
+    grid-row-end: span 2;
+    grid-column-start: 8;
     grid-column-end: span 5;
 }
-
-.col6 {
-    grid-column-end: span 6;
+    
+.profil-pix{
+    width: 80%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.col7 {
+
+.surprise{
+    width: 100%;
+    height: 18rem;
+    grid-row-start: 4;
+    grid-column-start: 1;
     grid-column-end: span 7;
 }
 
-.col12 {
+/*///// SEARCH BAR /////*/
+
+.search-bloc{
+    grid-row-start: 2;
     grid-column-end: span 12;
 }
 
-/*------- LIGNES ----------*/
-
-.row1 {
-    grid-row-start: 1;
-}
-
-.row2 {
-    grid-row-start: 2;
-}
-
-.row3 {
-    grid-row-start: 3;
-}
-
-.row4 {
-    grid-row-start: 4;
-}
-
-.row5 {
+/*///// FOOTER ////*/
+    .footer{
     grid-row-start: 5;
+    grid-column-end: span 12;
+}
+    
 }
 
-.row6 {
-    grid-row-start: 6;
+
+@media screen and (max-width: 640px) {
+    
+    .body{
+        grid-template-rows: repeat(7, auto);
+    }
+
+    /*///// ACCUEIL /////*/
+
+    .header{
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-column-end: span 12;
+    } 
+    
+    .hello{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: span 5;
+    }
+    
+    .claim{
+        grid-row-start: 4;
+        grid-column-start: 1;
+        grid-column-end: span 12;
+    }
+    
+    .hobbies{
+        grid-row-start: 5;
+        grid-column-start: 1;
+        grid-column-end: span 12;
+    }
+    
+    .profil-pix-bloc{
+        grid-row-start: 3;
+        grid-column-start: 6;
+        grid-column-end: span 7;
+    }
+    
+    .profil-pix{
+        width: 100%;
+    }
+    
+    .surprise{
+        grid-row-start: 6;
+        grid-column-start: 1;
+        grid-column-end: span 12;
+    }
+    
+    /*///// FOOTER /////*/
+
+    .footer{
+    grid-row-start: 7;
+    grid-column-end: span 12;
 }
-
-.row7 {
-    grid-row-start: 6;
-}
-
-.row8 {
-    grid-row-start: 8;
-}
-
-.row9 {
-    grid-row-start: 9;
-}
-
-}
-
-/*-------------*/
-
-.row-sp2{
-    grid-row-end: span 2;
 }
