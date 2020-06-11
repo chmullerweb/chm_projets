@@ -1,7 +1,82 @@
+.header{
+    background: rgba(47, 79, 79, 0.8);
+    
+}
+
+.claim{
+    background-color: rgba(33, 150, 146, 0.5); 
+}
+
+.hello{
+        background-color: rgba(150, 10, 244, 0.5);
+}
+
+.hobbies{
+        background-color: rgba(52, 161, 22, 0.5);
+}
+
+.surprise{
+        background-color: rgba(52, 161, 22, 0.5);
+}
+/* Ecran à partir de 641px */
+@media screen and (min-width: 641px) {
+
+
+.header{
+    width: 100%;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-end: span 3;
+}
+
+.claim{
+    width: 100%;
+    height: 11rem;
+    grid-row-start: 1;
+    grid-column-end: span 6;
+
+}
+
+.hello{
+   width: 100%;
+    height: 11rem;
+    grid-row-start: 1;
+    grid-column-start: 10;
+    grid-column-end: span 3;
+} 
+
+.hobbies{
+   width: 100%;
+    height: 12.1rem;
+    grid-row-start: 2;
+    grid-column-start: 4;
+    grid-column-end: span 4;
+}
+
+.profil-pix-bloc{
+    width: 100%;
+    height: 32rem;
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 8;
+    grid-column-end: span 5;
+}
+
+.surprise{
+    width: 100%;
+    height: 18rem;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: span 7;
+}
+}
+
+
 @media screen and (max-width: 640px) {
 
     .header{
         grid-row-start: 1;
+        grid-row-end: 1;
         grid-column-end: span 12;
     } 
     
@@ -35,65 +110,4 @@
         grid-column-start: 1;
         grid-column-end: span 12;
     }
-}
-    
-    
-    
-
-/* Ecran à partir de 641px */
-
-
-.header{
-    background: darkslategrey;
-    width: 100%;
-    height: 25rem;
-    background-color: darkslategrey;
-    grid-row-start: 1;
-    grid-row-end: span 2;
-    grid-column-end: span 3;
-}
-
-.claim{
-    width: 100%;
-    height: 11rem;
-    background-color: #219692; 
-    grid-row-start: 1;
-    grid-column-end: span 6;
-
-}
-
-.hello{
-   width: 100%;
-    height: 11rem;
-    background-color: #960af4;
-    grid-row-start: 1;
-    grid-column-start: 10;
-    grid-column-end: span 3;
-} 
-
-.loisirs{
-   width: 100%;
-    height: 12.1rem;
-    background-color: #34a116;
-/*
-    row2 col4
-*/
-}
-
-.profil-pix-bloc{
-    width: 100%;
-    height: 32rem;
-    background-color: #219692; 
-/*
-    row2 row-sp2 col-st8 col5
-*/
-}
-
-.surprise{
-    width: 100%;
-    height: 18rem;
-    background-color: #34a116;
-/*
-    row3 col7
-*/
 }
