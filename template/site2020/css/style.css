@@ -77,8 +77,36 @@ a:hover{
     padding-right: 3rem;
     align-items: center;
 }
-    
-    
+
+/*////////////// SEARCH BAR //////////////*/
+
+.input-search:focus {
+    outline: none;
+}
+
+.search-bloc {
+    border-top: 3px rgba(150, 10, 244) double;
+    justify-content: center;
+    border-bottom: 3px rgba(150, 10, 244) double;
+    justify-content: center;
+    padding: 20px 0px;
+    margin: 0 60px;
+}
+
+.input-search {
+    width: 50%;
+    color: black;
+    background-color: transparent;
+    font-style: italic;
+    border: none;
+    padding: 0 10px;
+}
+
+.icone-search {
+    width: 30px;
+    height: 30px;   
+}
+
 
 
 
@@ -143,8 +171,16 @@ a:hover{
     grid-column-start: 1;
     grid-column-end: span 7;
 }
-    
-.footer{
+
+/*////////////// SEARCH BAR //////////////*/
+
+.search-bloc{
+    grid-row-start: 2;
+    grid-column-end: span 12;
+}
+
+/*///// FOOTER ////*/
+    .footer{
     grid-row-start: 5;
     grid-column-end: span 12;
 }

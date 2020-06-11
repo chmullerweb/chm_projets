@@ -29,7 +29,7 @@
     </div>
     
     <div class="profil-pix-bloc">
-        <img class="profil-pix" src="template/site2020/img/Charlotte_resize.jpg" alt="">
+        <img class="profil-pix" src="<?php echo $_dossier_template ?>img/Charlotte_resize.jpg" alt="">
     </div>
     
     <div class="surprise">
