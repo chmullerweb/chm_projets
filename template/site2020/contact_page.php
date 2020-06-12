@@ -2,10 +2,7 @@
 
     
        
-    <form class="flex input-search-bloc">
-    <a><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" class="icone-search"></a>
-    <input type="text" placeholder="Photographie, peinture, sculputre..." class="input-search">
-    </form>
+    
     
     <div class="hobbies">
         <h2>Mes autres passions :</h2>

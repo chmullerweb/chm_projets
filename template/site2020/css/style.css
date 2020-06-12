@@ -115,16 +115,16 @@ nav {
 /*////////////// PHOTOS //////////////*/
 
 .profil-pix{
-    width: 80%;
-    height: 100%;
+    width: 28rem;
+    height: 32.5rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 .projet-pix{
-    width: 100%;
-    height: 100%;
+    width: 28rem;
+    height: 16rem;
 }
 
 /*////////////// SEARCH BAR //////////////
