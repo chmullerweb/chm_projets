@@ -11,6 +11,18 @@ body {
     display: flex;
 }
 
+.figcaption-contact {
+    opacity:1;
+    text-align:center;
+    font-size: 1.8rem;
+    background-color: transparent;
+    position: relative;
+}
+
+.contact-pix{
+    width: 4rem;
+    height: 3rem;
+}
 
 /*////////////// POLICES //////////////*/
 
@@ -89,7 +101,7 @@ top: 0;
 font-size: 1.8rem;
 }
 
-figure:hover figcaption {
+figure:hover figcaption, figure:hover .figcaption-contact {
 opacity:1;
 }
 
@@ -98,6 +110,12 @@ opacity:1;
 .footer {
     justify-content: flex-end;
     font-weight: 700;
+}
+
+.footer-contact{
+    grid-row-start:12!important;
+    grid-column:1/span11!important;
+    margin-top: 10rem;
 }
 
 .pix-networks {
