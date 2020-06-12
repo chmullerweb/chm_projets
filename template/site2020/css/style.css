@@ -74,6 +74,37 @@ nav {
     border-bottom: 2px rgb(52, 161, 22) solid;
 }
 
+/*////////////// BLOC PROJETS //////////////*/
+
+.bloc-projets{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.bloc-pix-projet {
+  width:100%;
+  border:5px ridge rgb(187, 180, 180);
+  position:relative;
+}
+
+figcaption {
+transition:all 1s;
+opacity:0;
+background-color: rgba(33, 150, 146, 0.7);
+text-align:center;
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+top: 0;
+font-size: 1.8rem;
+}
+
+figure:hover figcaption {
+opacity:1;
+}
 
 /*////////////// FOOTER //////////////*/
 

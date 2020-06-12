@@ -36,21 +36,44 @@
             </div>
         </div>
 
-       <button class="valider">Valider</button>
+        <button class="valider">Valider</button>
     </form>
 </section>
 
+<!--<section class="grid-projet">
 <div class="bloc-pix">
         <img class="projet-pix" src="<?php echo $_dossier_template ?>img/Codevores1.jpg" alt="">
 </div>
 
-<div class="bloc-pix bg-vert">
+<div class="bloc-pix">
         <img class="projet-pix" src="<?php echo $_dossier_template ?>img/museum1.jpg" alt="">
 </div>
 
-<div class="bloc-pix bg-vert">
+<div class="bloc-pix">
         <img class="projet-pix" src="<?php echo $_dossier_template ?>img/museum1.jpg" alt="">
 </div>
+</section>-->
+
+<section class="grid-projet">
+    <figure class="bloc-pix-projet" style="margin:0">
+        <img class="projet-pix" src="<?php echo $_dossier_template ?>img/Codevores1.jpg" alt="">
+        <figcaption>
+            <h3>Codevores</h3>
+            <p>Langages : </p>  <!--lister à la suite avec du php -->
+            <img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem">
+        </figcaption>
+    </figure>
+    <figure class="bloc-pix-projet" style="margin:0">
+    <img class="projet-pix" src="<?php echo $_dossier_template ?>img/museum1.jpg" alt="">
+        <figcaption>
+            <h3>Museum</h3>
+            <p>Langages : </p>  <!--lister à la suite avec du php -->
+            <img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem">
+        </figcaption>
+    </figure>
+
+
+</section>
 
 <!--Barre de navigation à creuser pour compiler JS/PHP-->
 <!--    <form class="flex search-bloc">
