@@ -11,7 +11,7 @@
     <!-- ////   CSS   //// -->
     <link rel="stylesheet" href="../template/site2020/css/cssreset.css">
     <link rel="stylesheet" href="../template/site2020/css/grid.css">
-    <link rel="stylesheet" href="../css/style_admin.css">
+    <link rel="stylesheet" href="css/style_admin.css">
 
 
     <!-- ////   PATTERN   //// -->
@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="grid">
+<body>
 
 <header class="nav">
         <nav>          

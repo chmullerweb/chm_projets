@@ -2,11 +2,19 @@
 include "../config.php";
 include "include/head_admin.php" ?>
 
-<h1>CSS + HTML only Accordion Element</h1>
+<h1>Connexion au compte administrateur</h1>
 <ul>
-  <li>
-    <input type="checkbox" checked>
+<li>
+    <h2>Pseudo :</h2>
+    <input title="Prénom du meilleur prof de PHP (minuscule)" type="text">
     <i></i>
-    <h2>Languages Used</h2>
-    <p>This page was written in HTML and CSS. The CSS was compiled from SASS. I used Normalize as my CSS reset and -prefix-free to save myself some headaches. I haven't quite gotten the hang of Slim for compiling into HTML, but someday I'll use it since its syntax compliments that of SASS. Regardless, this could all be done in plain HTML and CSS.</p>
   </li>
+  <li>
+    <h2>Mot de passe :</h2>
+    <input title="ID de James Bond (int)" type="text">
+    <i></i>
+  </li>
+</ul>
+
+</body>
+</html>
