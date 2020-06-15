@@ -33,10 +33,20 @@ Ce site internet est consultable en ligne : https://chmullerweb.github.io/chm_pr
 
 ## Composants et Fonctionnalités
 
+### PHP & MySQL
 * Usage du logiciel XAMPP pour lancer Apache et accéder à phpMyAdmin en local
 * Templating du site en PHP
 * Création d'une base de données MySQL dans phpMyAdmin
 * Création d'une interface administrateur pour gérer le contenu sans passer par la base de donnée
 * Sécurisation de l'accès à l'interface administrateur
+
+### CSS
+* Utilisation de CSS Grid pour la mise en page 
+
+### JAVASCRIPT
+
+* Appel d'API avec fetch()
+
+### RESPONSIVE
 * Site Responsive testé sur les navigateurs : Chrome et Firefox
 
