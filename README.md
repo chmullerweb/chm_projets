@@ -5,7 +5,7 @@ Mon site portfolio pour présenter mes différents projets personnels. Le conten
 
 ## URL du site
 
-Ce site internet est consultable en ligne : https://chmullerweb.github.io/chm_projets/
+Ce site internet n'est pas encore consultable en ligne
 
 ### Pré-requis
 
