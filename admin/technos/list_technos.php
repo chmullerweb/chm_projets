@@ -2,7 +2,7 @@
 include "../../config.php";
 include "../include/head_admin.php" ?>
 
-<h1>Gestion des projets</h1>
+<h1>Gestion des technologies</h1>
 <ul class="menu-admin">
   <li>
       <!-- Les titres H2 devront faire référence à la bdd -->
@@ -19,4 +19,4 @@ include "../include/head_admin.php" ?>
 </ul>
 
 <?php 
-include "include/footer_admin.php" ?>
+include "../include/footer_admin.php" ?>

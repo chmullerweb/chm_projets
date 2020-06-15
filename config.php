@@ -2,7 +2,8 @@
 session_start();
 
 $title = "Charlotte Muller";   //Attention la valeur de title doit être récupérée à partir du formulaire
-    
+$titleAdmin = "Administration - monBook";
+
 $_dossier_template = "template/site2020/"; // repertoire dans lequel j'ai mis l'ensemble des gabarits de mon site
 
 $_url_base = "http://localhost/coursphp/chm_projets/";

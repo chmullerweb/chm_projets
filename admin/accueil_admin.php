@@ -10,15 +10,15 @@ include "include/head_admin.php" ?>
   </li>
   <li>
     <h2>Gestion Page d'accueil</h2>
-    <i><a href="<?php echo $_url_base ?>accueil/form_accueil_admin.php" class="go">🥨</a></i>
+    <i><a href="<?php echo $_url_base ?>admin/accueil/form_accueil_admin.php" class="go">🥨</a></i>
   </li>
   <li>
     <h2>Gestion Technologies</h2>
-    <i><a href="<?php echo $_url_base ?>technos/table_technos.php" class="go">🥨</a></i>
+    <i><a href="<?php echo $_url_base ?>admin/technos/list_technos.php" class="go">🥨</a></i>
   </li>
   <li>
     <h2>Gestion Projets</h2>
-    <i><a href="<?php echo $_url_base ?>projets/table_projets.php" class="go">🥨</a></i>
+    <i><a href="<?php echo $_url_base ?>admin/projets/list_projets.php" class="go">🥨</a></i>
   </li>
 </ul>
 
