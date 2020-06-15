@@ -9,9 +9,8 @@
     
     
     <!-- ////   CSS   //// -->
-    <link rel="stylesheet" href="../template/site2020/css/cssreset.css">
-    <link rel="stylesheet" href="../template/site2020/css/grid.css">
-    <link rel="stylesheet" href="css/style_admin.css">
+    <link rel="stylesheet" href="<?php echo $_url_base . $_dossier_template ?>css/cssreset.css">
+    <link rel="stylesheet" href="<?php echo $_url_base ?>admin/css/style_admin.css">
 
 
     <!-- ////   PATTERN   //// -->

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$title = "Charlotte Muller";
+$title = "Charlotte Muller";   //Attention la valeur de title doit être récupérée à partir du formulaire
     
 $_dossier_template = "template/site2020/"; // repertoire dans lequel j'ai mis l'ensemble des gabarits de mon site
 
