@@ -15,5 +15,6 @@ include "include/head_admin.php" ?>
   </li>
 </ul>
 
-</body>
-</html>
+<?php 
+include "include/footer_admin.php" ?>
+
