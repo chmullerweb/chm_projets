@@ -118,28 +118,31 @@
 }
 
 .phone{
-    grid-column: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .mail{
-    grid-column: 6;
-}
+    grid-column-start: 5;
+    grid-column-end: 8;
+} 
 
 .networks{
-    grid-column: 9;
+    grid-column-start: 9;
+    grid-column-end: 12;
 }
 
 /*///// FOOTER ////*/
 .footer{
-    grid-row-start: 5;
+    grid-row-start: 12;
     grid-column-end: span 12;
 }
 
-.footer-contact{
+/* .footer-contact{
     grid-row-start:12!important;
     grid-column:1/span11!important;
     margin-top: 10rem;
-}
+} */
     
 }
 
@@ -256,13 +259,13 @@
     /*///// FOOTER /////*/
 
     .footer{
-    grid-row-start: 7;
+    grid-row-start: 12;
     grid-column-end: span 11;
 }
 
-.footer-contact{
+/* .footer-contact{
     grid-row-start:12!important;
     grid-column-start: 1;
     grid-column-end : 12;
-}
+} */
 }

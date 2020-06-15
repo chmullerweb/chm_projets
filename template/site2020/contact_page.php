@@ -35,6 +35,4 @@
     </figure>
 
    
-<section class="footer-contact">>
 <?php include "include/footer.php"?>
-</section>
