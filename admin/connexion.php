@@ -15,6 +15,14 @@ include "include/head_admin.php" ?>
   </li>
 </ul>
 
-<?php 
-include "include/footer_admin.php" ?>
+<footer class="nav">
+        <nav>          
+            <ul class="flex">            
+            <li class="white"><a href="<?php echo $_url_base?>index.php">Retour</a></li>
+            </ul>
+        </nav>
+</footer>
+
+</body>
+</html>
 
