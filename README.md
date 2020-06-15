@@ -29,7 +29,7 @@ Ce site internet n'est pas encore consultable en ligne
 
 ### Inspirations
 
-* [Codepen](https://codepen.io/abergin/pen/ihlDf) - design et fonctionnalité du formulaire de la section administration du site
+* [Codepen](https://codepen.io/abergin/pen/ihlDf) - reprise du design et des fonctionnalités pour mes formulaires de la section administration du site
 
 ## Composants et Fonctionnalités
 
