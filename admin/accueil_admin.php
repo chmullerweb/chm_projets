@@ -3,17 +3,21 @@ include "../config.php";
 include "include/head_admin.php" ?>
 
 <h1>Bienvenue dans votre espace administration "login"</h1>
-<ul>
+<ul class="menu-admin">
   <li>
-  <i><a href="<?php echo $_url_base ?>index.php">🥨</a></i>
     <h2>Voir le site</h2>
+    <i><a href="<?php echo $_url_base ?>index.php" class="go">🥨</a></i>
   </li>
   <li>
-    <i></i>
-    <h2>How it Works</h2>
+    <h2>Gestion Page d'accueil</h2>
+    <i><a href="<?php echo $_url_base ?>index.php" class="go">🥨</a></i>
   </li>
   <li>
-    <i></i>
-    <h2>Points of Interest</h2>
+    <h2>Gestion Technologies</h2>
+    <i><a href="<?php echo $_url_base ?>index.php" class="go">🥨</a></i>
+  </li>
+  <li>
+    <h2>Gestion Projets</h2>
+    <i><a href="<?php echo $_url_base ?>index.php" class="go">🥨</a></i>
   </li>
 </ul>
