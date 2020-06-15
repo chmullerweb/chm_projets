@@ -21,3 +21,6 @@ include "include/head_admin.php" ?>
     <i><a href="<?php echo $_url_base ?>index.php" class="go">🥨</a></i>
   </li>
 </ul>
+
+<?php 
+include "include/footer_admin.php" ?>
