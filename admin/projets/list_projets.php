@@ -16,6 +16,8 @@ include "../include/head_admin.php" ?>
     <a href="<?php echo $_url_base ?>admin/projets/delete_projet.php">Supprimer</a>
   </li>
   <li>
+  <button><a href="<?php echo $_url_base ?>admin/projets/form_projet.php">Ajouter</a></button>
+    </li>
 </ul>
 
 <?php 
