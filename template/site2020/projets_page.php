@@ -16,22 +16,22 @@
 -->
         <div class="techno-list flex">
             <div class="flex">
-                <input type="checkbox" name="html" class="input-search">
+                <input type="checkbox" id="html" name="html" class="input-search">
                 <label for="html">HTML5</label>
             </div>
 
             <div class="flex">
-                <input type="checkbox" name="css" class="input-search">
+                <input type="checkbox" id="css" name="css" class="input-search">
                 <label for="css">CCS3</label>
             </div>
 
             <div class="flex">
-                <input type="checkbox" name="javascript" class="input-search">
+                <input type="checkbox" id="javascript" name="javascript" class="input-search">
                 <label for="javascript">Javascript</label>
             </div>
 
             <div class="flex">
-                <input type="checkbox" name="php" class="input-search">
+                <input type="checkbox" id="php" name="php" class="input-search">
                 <label for="php">PHP</label>
             </div>
         </div>
@@ -40,27 +40,13 @@
     </form>
 </section>
 
-<!--<section class="grid-projet">
-<div class="bloc-pix">
-        <img class="projet-pix" src="<?php echo $_dossier_template ?>img/Codevores1.jpg" alt="">
-</div>
-
-<div class="bloc-pix">
-        <img class="projet-pix" src="<?php echo $_dossier_template ?>img/museum1.jpg" alt="">
-</div>
-
-<div class="bloc-pix">
-        <img class="projet-pix" src="<?php echo $_dossier_template ?>img/museum1.jpg" alt="">
-</div>
-</section>-->
-
 <section class="grid-projet">
     <figure class="bloc-pix-projet" style="margin:0">
         <img class="projet-pix" src="<?php echo $_dossier_template ?>img/Codevores1.jpg" alt="">
         <figcaption>
             <h3>Codevores</h3>
             <p>Langages : </p>  <!--lister à la suite avec du php -->
-            <img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem">
+            <a href="<?php echo $_url_base?>projet.php"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
         </figcaption>
     </figure>
     <figure class="bloc-pix-projet" style="margin:0">
@@ -68,7 +54,7 @@
         <figcaption>
             <h3>Museum</h3>
             <p>Langages : </p>  <!--lister à la suite avec du php -->
-            <img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem">
+            <a href="<?php echo $_url_base?>projet.php"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
         </figcaption>
     </figure>
 

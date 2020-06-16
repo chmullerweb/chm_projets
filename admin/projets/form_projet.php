@@ -62,8 +62,8 @@ include "../include/head_admin.php" ?>
 </ul>
 
 <div class="flex" style="padding-top: 2rem">
-<input type="submit" value="Envoyer" />
-<button><a href="<?php echo $_url_base ?>admin/accueil_admin.php">Annuler</a></button>
+<button type="submit">Envoyer</button>
+<button type="button"><a href="<?php echo $_url_base ?>admin/accueil_admin.php">Annuler</a></button>
 </div>
 </form>
 <?php 
