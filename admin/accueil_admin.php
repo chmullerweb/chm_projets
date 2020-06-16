@@ -1,12 +1,16 @@
 <?php 
 include "../config.php";
-include "include/head_admin.php" ?>
+include "include/head_admin.php";
 
-<h1>Bienvenue dans votre espace administration "login"</h1>
+verif_connexion();
+$user = $_SESSION["connected_user"];
+?>
+
+<h1>Bienvenue dans votre espace administration <?php echo $user["nom"] ?></h1>
 <ul class="menu-admin">
   <li>
     <h2>Voir le site</h2>
-    <i><a href="<?php echo $_url_base ?>index.php" class="go">🥨</a></i>
+    <i><a href="<?php echo $_url_base ?>index.php" class="go" target="_blank">🥨</a></i>
   </li>
   <li>
     <h2>Gestion Page d'accueil</h2>

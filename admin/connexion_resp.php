@@ -25,11 +25,9 @@ if(empty($_POST["identifiant_admin"]) || empty($_POST["motdepasse_admin"])) {
     );
     // La réponse affiche toutes les "vrai(e)s" valeurs/enregistrements compris(es) dans identifiant et motdepasse (=colonnes de ma table)
     $resultatUser = $query -> fetch(PDO::FETCH_ASSOC);
-    header ("location : accueil_admin.php");
-    exit;
+    
 
     // On vérifie que ces "vraies" valeurs existent dans notre bdd. Seul les users dont les identifiants figurent dans la table admin pourront accéder au compte administrateur.
-
     if(!empty($resultatUser)) { 
         // Si notre requête retourne un résultat, c'est qu'il y a un utilisateur avec cet identifiant et ce mot de passe.
         //Je précise la clé [0] dans $resultatUser[0] car je ne récupère qu'1 seul User (qu'une seule ligne)
@@ -44,6 +42,5 @@ if(empty($_POST["identifiant_admin"]) || empty($_POST["motdepasse_admin"])) {
         header("location : connexion.php?err=userinconnu");
         exit;
     }
-
 
 }

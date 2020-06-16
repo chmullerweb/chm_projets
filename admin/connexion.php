@@ -1,12 +1,13 @@
 <?php 
 include "../config.php";
-include "include/head_admin.php" ?>
+include "include/head_admin.php";
+?>
 
 <img src="../template/site2020/img/lock.png" alt="cadenas de connexion" class="lock">
 <h1>Connexion au compte administrateur</h1>
 
 <!-- Je crée un formulaire qui récupère les données saisies dans l'input et les vérifies dans connexion_resp.php pour vérifier si l'internaute à la droit ou non d'accéder au compte administrateur -->
-<form action="connexion_resp.php" method="post">
+<form method="post" action="connexion_resp.php">
 <ul>
 <li>
     <h2>Pseudo :</h2>
@@ -18,6 +19,7 @@ include "include/head_admin.php" ?>
   </li>
 </ul>
 <button type="submit">Valider</button>
+
 </form>
 
 <footer class="nav">
