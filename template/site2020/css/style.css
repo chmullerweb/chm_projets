@@ -157,6 +157,16 @@ opacity:1;
         width: 17rem;
 }
 
+@media screen and (max-width: 840px) {
+    .pix-projet-details-main{
+        width: 24rem;
+        }
+        
+    .pix-projet-details{
+            width: 11rem;
+    }
+}
+
 /*////////////// CONTACT //////////////*/
 
 .figcaption-contact {

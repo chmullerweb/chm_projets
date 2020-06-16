@@ -290,6 +290,48 @@ grid-column: 6/span 3;
     grid-column-end: span 12;
 }
 
+/*///// PROJET DETAILS ////*/
+
+.title-projet{
+    width: 100%;
+    grid-row-start: 5;
+    grid-column-end: span 12;
+    }
+    
+    .description{
+    grid-row-start: 6;
+    grid-column: 1/ span 12;
+    }
+    
+    .year{
+        grid-row-start: 7;
+    grid-column: 1 / span 12;
+    justify-content: space-between;
+    }
+    
+    .photo_principale{
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column: 1/span 3;
+    }
+    
+    .photo_1{
+        grid-row-start: 4;
+        grid-column: 1 / span 2; 
+    }
+    
+    .photo_2{
+        grid-row-start: 4;
+        grid-column: 5 / span 2; 
+    }
+
+    .techno{
+        grid-row-start: 8;
+        grid-column: 1/ span 12;
+    }
+
+    
+
     /*///// FOOTER /////*/
 
     .footer{
@@ -297,9 +339,5 @@ grid-column: 6/span 3;
     grid-column-end: span 11;
 }
 
-/* .footer-contact{
-    grid-row-start:12!important;
-    grid-column-start: 1;
-    grid-column-end : 12;
-} */
+
 }
