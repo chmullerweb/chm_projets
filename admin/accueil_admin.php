@@ -29,7 +29,7 @@ $user = $_SESSION["connected_user"];
 <footer class="nav">
         <nav>          
             <ul class="flex">            
-            <li class="white"><a href="<?php echo $_url_base?>admin/connexion.php">Se déconnecter</a></li>
+            <li class="white"><a href="<?php echo $_url_base?>admin/deconnexion.php">Se déconnecter</a></li>
             </ul>
         </nav>
 </footer>
