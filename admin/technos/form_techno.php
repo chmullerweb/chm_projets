@@ -1,9 +1,20 @@
 <?php 
 include "../../config.php";
-include "../include/head_admin.php" ?>
+include "../include/head_admin.php"; 
+
+if(!empty($_GET["technoedit"])) {
+  // si j'ai un paramètre d'URL, c'est que je peux éditer la techno
+  // un enregistrement déjà existant.
+  $technoedit = $bdd -> query("SELECT * from technos where id_techno = " . $_GET["technoedit"]) -> fetch();
+} else {
+  $technoedit = [];
+  $technoedit["nomtechno"] = "";
+}
+
+?>
 
 <h1>Editer la liste des technologies</h1>
-<form enctype="multipart/form-data" action="form_accueil_admin_reponse.php" method="post">
+<form enctype="multipart/form-data" action="form_techno_resp.php" method="post">
 <ul>
     <li>
 
@@ -13,8 +24,9 @@ include "../include/head_admin.php" ?>
         <!-- Modifie le nom de la techno -->
     <h2>Nom de la technologie</h2>
             <!-- Récupère le texte qui est affiché actuellement s'il existe -->
-    <input type="text" name="nameTechno">
-  </li>
+    <input type="text" name="nomtechno" value="<?php echo "$technoedit[nomtechno]" ?>">
+    <input type="hidden" name="id_techno" value="<?php echo "$technoedit[id_techno]" ?>">
+    </li>
 </ul>
 
 <div class="flex" style="padding-top: 2rem">

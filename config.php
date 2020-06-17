@@ -40,7 +40,7 @@ function uneTechno ($idTechno) {
     global $bdd;
 
     #on prépare la requête en lui donnant une étiquette :idTechno
-    $query = $bdd -> prepare("select * from techno where id_techno = :idTechno");
+    $query = $bdd -> prepare("select * from technos where id_techno = :idTechno");
     
     #on éxécute la requête
     $query -> execute([":idTechno" => $idTechno]);

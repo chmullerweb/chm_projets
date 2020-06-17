@@ -10,7 +10,7 @@ if(!isset($_GET["technodelete"])) { // on verifie que nous avons bien l'identifi
 } else {
     $laTechno = uneTechno($_GET["technodelete"]);
     // on a l'identifiant embarqué dans $_GET, nous supprimons la techno
-    $bdd -> query("DELETE FROM techno WHERE id_techno = " . $_GET["technodelete"]);
+    $bdd -> query("DELETE FROM technos WHERE id_techno = " . $_GET["technodelete"]);
     header ("location:list_technos.php?technodelete=$laTechno[nom]");
 };
 

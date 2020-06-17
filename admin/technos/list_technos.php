@@ -5,10 +5,9 @@ include "../include/head_admin.php";
 //requête pour la table techno
 global $bdd;
 
-    $query = $bdd -> query("SELECT * from techno");
+    $query = $bdd -> query("SELECT * from technos");
     $val = $query -> fetchAll(PDO::FETCH_ASSOC);
-
-?>
+  ?>
 
 
 <h1>Gestion des technologies</h1>
@@ -20,8 +19,8 @@ global $bdd;
     foreach($val as $technologies => $techno){
 ?>
     <li>
-    <h2><?php echo "$techno[nom]" ?><h2>
-    <a href="<?php echo $_url_base . "admin/technos/form_techno.php"?>">Modifier</a>
+    <h2><?php echo $techno["nomtechno"] ?><h2>
+    <a href="<?php echo $_url_base . "admin/technos/form_techno.php?technoedit=$techno[id_techno]"?>">Modifier</a>
     <a href="<?php echo $_url_base . "admin/technos/delete_techno.php?technodelete=$techno[id_techno]"?>">Supprimer</a>
     </li>
 <?php }; ?>
@@ -33,4 +32,5 @@ global $bdd;
 
 <?php 
 include "../include/footer_admin.php" 
+
 ?>
