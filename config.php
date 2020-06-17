@@ -16,7 +16,7 @@ $bdd = new PDO("mysql:host=$serveur;dbname=$nomBaseDeDonnees", $utilisateur, $mo
 
 /// Je déclare mes variables et constantes 
 
-$title = "Charlotte Muller";   //Attention la valeur de title doit être récupérée à partir du formulaire
+$title = $_SESSION["prenomNom"];   //Attention la valeur de title doit être récupérée à partir du formulaire
 $titleAdmin = "Administration - monBook";
 
 $_dossier_template = "template/site2020/"; // repertoire dans lequel j'ai mis l'ensemble des gabarits de mon site

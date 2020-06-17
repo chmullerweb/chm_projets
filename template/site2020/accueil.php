@@ -9,12 +9,13 @@
     $query -> execute([":iduu" => "TEXT_ACCUEIL"]);
     $val = $query ->  fetchAll(PDO::FETCH_ASSOC);
 
+    $_SESSION["prenomNom"] = $val[0]["nomprofil"];
 ?>
 
     
        
     <section class="header bg-sapin">
-               <h1><?php echo $val[0]["nomprofil"] ?></h1> 
+               <h1><?php echo $_SESSION["prenomNom"] ?></h1> 
                <h2>Développeuse Web Fullstack</h2>    
 
     </section>

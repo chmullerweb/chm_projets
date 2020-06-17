@@ -2,7 +2,7 @@
 include "../../config.php";
 include "../include/head_admin.php" ?>
 
-<h1>Modifier la liste des technologies</h1>
+<h1>Editer la liste des technologies</h1>
 <form enctype="multipart/form-data" action="form_accueil_admin_reponse.php" method="post">
 <ul>
     <li>
