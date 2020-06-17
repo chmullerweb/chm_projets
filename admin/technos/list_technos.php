@@ -15,13 +15,14 @@ global $bdd;
 <ul class="menu-admin">
 
 <?php 
+//Affichage des technologies depuis la base de donnée
 
     foreach($val as $technologies => $techno){
 ?>
     <li>
     <h2><?php echo "$techno[nom]" ?><h2>
     <a href="<?php echo $_url_base . "admin/technos/form_techno.php"?>">Modifier</a>
-    <a href="<?php echo $_url_base . "admin/technos/delete_techno.php"?>">Supprimer</a>
+    <a href="<?php echo $_url_base . "admin/technos/delete_techno.php?technodelete=$techno[id_techno]"?>">Supprimer</a>
     </li>
 <?php }; ?>
   

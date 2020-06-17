@@ -33,6 +33,22 @@ function verif_connexion(){
     } 
 };
 
+//ici je crée une fonction qui récupère l'id de la techno 
+function uneTechno ($idTechno) {
+    // retourne toutes les informations de la techno qui a comme identifiant $idTechno
+
+    global $bdd;
+
+    #on prépare la requête en lui donnant une étiquette :idTechno
+    $query = $bdd -> prepare("select * from techno where id_techno = :idTechno");
+    
+    #on éxécute la requête
+    $query -> execute([":idTechno" => $idTechno]);
+    
+    return $query -> fetch(PDO::FETCH_ASSOC); // on utilise fetch et non fetchAll car nous souhaitons retourner un seul résultat.
+
+};
+
 
 // je crée une fonction pour récupérer les données de mes tables de ma bdd
 function MontrerValeur($table, $colonne) {
