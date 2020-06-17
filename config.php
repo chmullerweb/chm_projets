@@ -30,5 +30,22 @@ $_url_base = "http://localhost/coursphp/chm_projets/";
 function verif_connexion(){
     if(empty($_SESSION["connected_user"])){
         header("location:connexion.php");
-    };
+    } 
 };
+
+
+// je crée une fonction pour récupérer les données de mes tables de ma bdd
+function MontrerValeur($table, $colonne) {
+
+    global $bdd;
+
+    $query = $bdd -> prepare("SELECT * from $table where $colonne = :colonne");
+    $query -> execute([":colonne" => $colonne]);
+    $val = $query ->  fetchAll(PDO::FETCH_ASSOC);
+
+    if(isset($val[$colonne])) {
+        return $val[$colonne];
+    }
+}
+
+

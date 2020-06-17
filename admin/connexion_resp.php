@@ -7,7 +7,7 @@ include "../config.php";
 
 if(empty($_POST["identifiant_admin"]) || empty($_POST["motdepasse_admin"])) {
     // ajouterErreur("Merci de vous connecter");
-    header ("location: connexion.php?err=champvide");
+    header ("location:connexion.php?err=champvide");
     exit;
 } else {
 
@@ -33,13 +33,14 @@ if(empty($_POST["identifiant_admin"]) || empty($_POST["motdepasse_admin"])) {
         //Je précise la clé [0] dans $resultatUser[0] car je ne récupère qu'1 seul User (qu'une seule ligne)
         //J'autorise l'accès pour ce user et le redirige vers l'accueil du compte admin
         $_SESSION["connected_user"] = $resultatUser;
-        header ("location : accueil_admin.php"); 
-        exit;
+        //var_dump($_SESSION["connected_user"]);
+        //exit;
+        header ("location:accueil_admin.php"); 
     } else {
         // si je passe ici, c'est que je n'ai pas trouvé d'utilisateur avec les identifiants et le mdp renseigné dans le formulaire.
         // je ne peux pas le laisser se connecter et l'invite à recommencer.
         // ajouterErreur("L'utilisateur n'a pas été trouvé.");
-        header("location : connexion.php?err=userinconnu");
+        header("location:connexion.php?err=userinconnu");
         exit;
     }
 

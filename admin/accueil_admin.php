@@ -3,7 +3,9 @@ include "../config.php";
 include "include/head_admin.php";
 
 verif_connexion();
+  // je crée une variable qui récupère les enregistrements de $_SESSION["connected_user"] dans un tableau
 $user = $_SESSION["connected_user"];
+
 ?>
 
 <h1>Bienvenue dans votre espace administration <?php echo $user["nom"] ?></h1>
