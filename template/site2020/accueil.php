@@ -1,20 +1,31 @@
-<?php include "include/head.php"?>
+<?php include "include/head.php";
+
+    // montre la valeur de simpledonnee
+
+    global $bdd;
+
+    // 1 - on verifie si la donnée existe déjà dans la table.
+    $query = $bdd -> prepare("SELECT * from accueil where iduu = :iduu");
+    $query -> execute([":iduu" => "TEXT_ACCUEIL"]);
+    $val = $query ->  fetchAll(PDO::FETCH_ASSOC);
+
+?>
 
     
        
     <section class="header bg-sapin">
-               <h1>Charlotte Muller</h1> 
+               <h1><?php echo $val[0]["nomprofil"] ?></h1> 
                <h2>Développeuse Web Fullstack</h2>    
 
     </section>
     
     <div class="claim bg-bleu"> 
-        <p> everyone can coding</p> <!--select quote from accueil*/-->
+        <p><?php echo $val[0]["claim"] ?></p> <!--select quote from accueil*/-->
     </div>
     
     <div class="hello bg-violet">
         <h2>Hello</h2>
-        <p>Les images parlent plus que les mots, découvrez mes projets en photo.</p>
+        <p><?php echo $val[0]["intro"] ?></p>
     </div>
     
     <div class="hobbies bg-vert">
@@ -29,7 +40,7 @@
     </div>
     
     <div class="profil-pix-bloc">
-        <img class="profil-pix" src="<?php echo $_dossier_template ?>img/Charlotte_resize.jpg" alt="">
+        <img class="profil-pix" src="<?php echo $_dossier_template ?>img/photo_profil.jpg" alt="">
     </div>
     
     <div class="surprise bg-vert">
