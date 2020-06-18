@@ -2,6 +2,16 @@
 include "../../config.php";
 include "../include/head_admin.php";
 
+// on importe le contenu de la table technos de ma bdd
+
+global $bdd;
+
+$query = $bdd -> prepare("SELECT * from technos where iduu = :iduu");
+$query -> execute([":iduu" => "TEXT_TECHNO"]);
+$list_techno = $query ->  fetchAll(PDO::FETCH_ASSOC);
+
+// je vérifie plusieurs conditions pour savoir si le formulaire va rentrer un nouvel enregistrement ou l'éditer
+
 if(!empty($_GET["projetedit"])) {
   // si j'ai un paramètre d'URL, c'est que je peux éditer le projet et récupérer ses enregistrements
   $projetedit = $bdd -> query("SELECT * from projets where id_projet = " . $_GET["projetedit"]) -> fetch();
@@ -56,6 +66,20 @@ if(!empty($_GET["projetedit"])) {
   <h2>Voir le site</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
     <input name="lien" value="<?php echo $projetedit["lien"] ?>" style="width:100%">
+  </li>
+
+  <li>
+
+  <li>
+  <h2>Les technos utilisées</h2>
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!   A FAIRE Coche les technos utilisées actuellement : si techno_id et projet_id existe alors input checked. Dans le for_resp récupérer le techno_id et l'insérer dans la join table-->
+            <div class="techno-list">
+        <?php foreach($list_techno as $key => $techno){ ?>
+            <div class="flex">
+            <input type="checkbox" id="<?php echo $techno["nomtechno"]?>" name="<?php echo $techno["nomtechno"]?>" class="input-search" value="<?php $techno["id_techno"]?>">
+                <label for="<?php echo $techno["nomtechno"]?>"><?php echo $techno["nomtechno"]?></label>
+            </div>
+<?php }; ?>
   </li>
 
   <li>
