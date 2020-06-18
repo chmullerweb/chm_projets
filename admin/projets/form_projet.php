@@ -1,8 +1,19 @@
 <?php 
 include "../../config.php";
-include "../include/head_admin.php" ?>
+include "../include/head_admin.php";
 
-<h1>Modification de la liste des projets</h1>
+if(!empty($_GET["projetedit"])) {
+  // si j'ai un paramètre d'URL, c'est que je peux éditer le projet et récupérer ses enregistrements
+  $projetedit = $bdd -> query("SELECT * from projets where id_projet = " . $_GET["projetedit"]) -> fetch();
+  // sinon le projet est nouveau et les input sont vides
+} else {
+  $projetoedit = [];
+  $projetedit["titre"] = "";
+}
+
+?>
+
+<h1>Editer la liste des projets</h1>
 <form enctype="multipart/form-data" action="form_accueil_admin_reponse.php" method="post">
 <ul>
     <li>
@@ -12,27 +23,36 @@ include "../include/head_admin.php" ?>
 
     <h2>Nom du projet</h2>
             <!-- Récupère le texte qui est affiché actuellement s'il existe -->
-    <input type="text" name="nameProfil">
+    <input type="text" name="titre" value="<?php echo $projetedit["titre"] ?>">
+    <input type="hidden" name="id_projet" value="<?php echo $projetedit["id_projet"] ?>">
   </li>
+  
   <li>
-
     <!-- <input type="checkbox" checked>
     <i></i> -->
 
-        <!-- Modifie la description du projet -->
+        <!-- Modifie la presentation du projet -->
         <h2>Description</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
-    <textarea name="description"> ... </textarea>
-  <li>
+    <textarea name="presentation" style="width:100%"> <?php echo $projetedit["presentation"] ?> </textarea>
+  </li>
 
-    <!-- <input type="checkbox" checked>
+  <li>
+      <!-- <input type="checkbox" checked>
     <i></i> -->
 
     <!-- Modifie l'année de création du projet -->
     <h2>Année de création</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
-    <input name="createDate"> ... </textarea>
+    <input name="annee" value="<?php echo $projetedit["annee"] ?>">
   </li>
+
+  <li>
+  <h2>Voir le site</h2>
+            <!-- Récupère le texte qui est affiché actuellement -->
+    <input name="url" value="<?php echo $projetedit["url"] ?>" style="width:100%">
+  </li>
+
   <li>
       
     <!-- <input type="checkbox" checked>
@@ -41,24 +61,22 @@ include "../include/head_admin.php" ?>
     <!-- Modifie les photos du projet -->
     <h2>Photo principale</h2>
             <!-- Récupère l'image qui est en ligne actuellement -->
-    <img src="<?php echo $_url_base . $_dossier_template?>/img/Charlotte_resize.jpg" alt="" style="width:4rem">
-    <input name="imageAccueil" type="file"  accept="image/jpeg" />
+    <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img_main"]?>" alt="" style="width:4rem">
+    <input name="img_main" type="file"  accept="image/jpeg" />
   </li>
+  <li>
   <h2>Photo numéro 2</h2>
             <!-- Récupère l'image qui est en ligne actuellement -->
-    <img src="<?php echo $_url_base . $_dossier_template?>/img/Charlotte_resize.jpg" alt="" style="width:4rem">
-    <input name="imageAccueil" type="file"  accept="image/jpeg" />
+    <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img1"]?>" alt="" style="width:4rem">
+    <input name="img1" type="file"  accept="image/jpeg" />
   </li>
+  <li>
   <h2>Photo numéro 3</h2>
             <!-- Récupère l'image qui est en ligne actuellement -->
-    <img src="<?php echo $_url_base . $_dossier_template?>/img/Charlotte_resize.jpg" alt="" style="width:4rem">
-    <input name="imageAccueil" type="file"  accept="image/jpeg" />
+    <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img2"]?>" alt="" style="width:4rem">
+    <input name="img2" type="file"  accept="image/jpeg" />
   </li>
-  <h2>Photo numéro 4</h2>
-            <!-- Récupère l'image qui est en ligne actuellement -->
-    <img src="<?php echo $_url_base . $_dossier_template?>/img/Charlotte_resize.jpg" alt="" style="width:4rem">
-    <input name="imageAccueil" type="file"  accept="image/jpeg" />
-  </li>
+  
 </ul>
 
 <div class="flex" style="padding-top: 2rem">

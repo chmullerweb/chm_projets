@@ -2,7 +2,7 @@
 include "../../config.php";
 include "../include/head_admin.php";
 
-//requête pour la table techno
+//requête pour la table technos
 global $bdd;
 
     $query = $bdd -> query("SELECT * from technos");
