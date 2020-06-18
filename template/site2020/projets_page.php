@@ -1,4 +1,15 @@
-<?php include "include/head.php"?>
+<?php include "include/head.php";
+
+// on importe le contenu de la table technos de ma bdd
+
+global $bdd;
+
+$query = $bdd -> prepare("SELECT * from technos where iduu = :iduu");
+$query -> execute([":iduu" => "TEXT_TECHNO"]);
+$list_techno = $query ->  fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 
 <div class="title">
     <h1>Mes projets</h1>
@@ -14,28 +25,15 @@
         <!--
     PENSEZ A FAIRE UNE FONCTION QUI AFFICHE LES DONNEES DU TABLEAU TECHNO
 -->
+
         <div class="techno-list flex">
+        <?php foreach($list_techno as $key => $techno){?>
             <div class="flex">
-                <input type="checkbox" id="html" name="html" class="input-search">
-                <label for="html">HTML5</label>
+            <input type="checkbox" id="<?php echo $techno["nomtechno"]?>" name="<?php echo $techno["nomtechno"]?>" class="input-search" value="<?php $techno["id_techno"]?>">
+                <label for="<?php echo $techno["nomtechno"]?>"><?php echo $techno["nomtechno"]?></label>
             </div>
-
-            <div class="flex">
-                <input type="checkbox" id="css" name="css" class="input-search">
-                <label for="css">CCS3</label>
-            </div>
-
-            <div class="flex">
-                <input type="checkbox" id="javascript" name="javascript" class="input-search">
-                <label for="javascript">Javascript</label>
-            </div>
-
-            <div class="flex">
-                <input type="checkbox" id="php" name="php" class="input-search">
-                <label for="php">PHP</label>
-            </div>
-        </div>
-
+<?php }; ?>
+            
         <button class="valider">Valider</button>
     </form>
 </section>

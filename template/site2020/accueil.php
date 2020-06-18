@@ -1,10 +1,9 @@
 <?php include "include/head.php";
 
-    // montre la valeur de simpledonnee
+    // on importe le contenu de la table accueil de ma bdd
 
     global $bdd;
 
-    // 1 - on verifie si la donnée existe déjà dans la table.
     $query = $bdd -> prepare("SELECT * from accueil where iduu = :iduu");
     $query -> execute([":iduu" => "TEXT_ACCUEIL"]);
     $val = $query ->  fetchAll(PDO::FETCH_ASSOC);
