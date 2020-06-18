@@ -7,14 +7,19 @@ if(!empty($_GET["projetedit"])) {
   $projetedit = $bdd -> query("SELECT * from projets where id_projet = " . $_GET["projetedit"]) -> fetch();
   // sinon le projet est nouveau et les input sont vides
 } else {
-  $projetoedit = [];
+  $projetedit = [];
   $projetedit["titre"] = "";
+  $projetedit["presentation"] = ""; 
+  $projetedit["lien"] = "";
+  $projetedit["annee"] = "";
+  $projetedit["ordre"] = "";
+ 
 }
 
 ?>
 
 <h1>Editer la liste des projets</h1>
-<form enctype="multipart/form-data" action="form_accueil_admin_reponse.php" method="post">
+<form enctype="multipart/form-data" action="form_projet_resp.php" method="post">
 <ul>
     <li>
 
@@ -50,7 +55,7 @@ if(!empty($_GET["projetedit"])) {
   <li>
   <h2>Voir le site</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
-    <input name="url" value="<?php echo $projetedit["url"] ?>" style="width:100%">
+    <input name="lien" value="<?php echo $projetedit["lien"] ?>" style="width:100%">
   </li>
 
   <li>
@@ -76,13 +81,20 @@ if(!empty($_GET["projetedit"])) {
     <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img2"]?>" alt="" style="width:4rem">
     <input name="img2" type="file"  accept="image/jpeg" />
   </li>
+
+  <li>
+    <!-- Modifie l'ordre du projet -->
+    <h2>Ordre</h2>
+            <!-- Récupère le numéro qui est affiché actuellement -->
+    <input name="ordre" value="<?php echo $projetedit["ordre"] ?>">
+  </li>
   
 </ul>
 
 <div class="flex" style="padding-top: 2rem">
 <button type="submit">Envoyer</button>
-<button type="button"><a href="<?php echo $_url_base ?>admin/accueil_admin.php">Annuler</a></button>
+<button type="button"><a href="<?php echo $_url_base ?>admin/list_projets.php">Annuler</a></button>
 </div>
 </form>
 <?php 
-include "../include/footer_admin.php" ?>
+include "../include/footer_admin.php"; ?>

@@ -14,9 +14,16 @@ $nomBaseDeDonnees = "monbook_charlotte";
 $bdd = new PDO("mysql:host=$serveur;dbname=$nomBaseDeDonnees", $utilisateur, $motdepasse, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
 
-/// Je déclare mes variables et constantes 
+///////// Je déclare mes variables et constantes 
 
-$title = $_SESSION["prenomNom"];   //Attention la valeur de title doit être récupérée à partir du formulaire
+//Je récupère la valeur de title si l'administrateur s'est connecté
+$title = "";
+if(isset($_SESSION["prenonNom"])){
+    $title = $_SESSION["prenomNom"];
+} else{
+    $title = "Mon Book";
+};
+
 $titleAdmin = "Administration - monBook";
 
 $_dossier_template = "template/site2020/"; // repertoire dans lequel j'ai mis l'ensemble des gabarits de mon site
