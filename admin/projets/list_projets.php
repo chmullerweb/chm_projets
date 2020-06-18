@@ -13,7 +13,7 @@ include "../include/head_admin.php" ?>
   <li>
     <h2>Museum</h2>
     <a href="<?php echo $_url_base ?>admin/projets/form_projet.php">Modifier</a>
-    <a href="<?php echo $_url_base ?>admin/projets/delete_projet.php">Supprimer</a>
+    <a <?php echo "onclick=\" return confirm('Voulez-vous effacer cette technologie?')\"" ?> href="<?php echo $_url_base ?>admin/projets/delete_projet.php">Supprimer</a>
   </li>
   <li>
   <button><a href="<?php echo $_url_base ?>admin/projets/form_projet.php">Ajouter</a></button>
