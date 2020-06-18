@@ -29,7 +29,7 @@ $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
         <!--    Pour chaque techno de ma table techno, je l'affiche -->
         <form action="projets_page.php" method="post">
         <div class="techno-list flex">
-        <?php foreach($list_techno as $key => $techno){?>
+        <?php foreach($list_techno as $key => $techno){ ?>
             <div class="flex">
             <input type="checkbox" id="<?php echo $techno["nomtechno"]?>" name="<?php echo $techno["nomtechno"]?>" class="input-search" value="<?php $techno["id_techno"]?>">
                 <label for="<?php echo $techno["nomtechno"]?>"><?php echo $techno["nomtechno"]?></label>
@@ -41,13 +41,31 @@ $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
 
 <section class="grid-projet">
         <!--    Pour chaque projet de ma table projets, je l'affiche -->
-    <?php foreach($list_projet as $key => $projet){?>
+    <?php foreach($list_projet as $key => $projet){
+        
+        // on importe le nomtechno de la bdd en passant par la table de jointure projets_techno
+        // on sélectionne uniquement les technos utilisées pour le $projet via son id_projet
+           $query = $bdd -> query("SELECT nomtechno from projets_technos, projets, technos where 
+            projets.id_projet = projets_technos.projet_id
+            AND technos.id_techno = projets_technos.techno_id
+            AND id_projet = $projet[id_projet]");
+
+          $technologies = $query -> fetchAll(PDO::FETCH_ASSOC);
+    ?>
     
     <figure class="bloc-pix-projet" style="margin:0">
         <img class="projet-pix" src="<?php echo $_dossier_template . $projet["img_main"]?>" alt="">
         <figcaption>
             <h3><?php echo $projet["titre"]?></h3>
-            <p>Langages : </p>  <!--lister à la suite avec du php -->
+            <p>Langages :
+            <?php 
+
+            foreach($technologies as $key => $techno){
+            echo $techno["nomtechno"] . " - ";    
+     };
+            
+            ?>
+            </p>
             <a href="<?php echo $_url_base?>projet.php"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
         </figcaption>
     </figure>

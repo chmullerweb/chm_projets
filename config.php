@@ -64,4 +64,11 @@ function MontrerValeur($table, $colonne) {
     }
 }
 
+// je crée une fonction pour mieux lire les données d'un tableau
+function vd($var){
+    echo "<pre>";
+    var_dump($var);
+    echo "</pre>";
+    }
+
 
