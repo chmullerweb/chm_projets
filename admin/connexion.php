@@ -10,7 +10,7 @@ include "include/head_admin.php";
 <form method="post" action="connexion_resp.php">
 <ul>
 <li>
-    <h2>Pseudo :</h2>
+    <h2>Identifiant :</h2>
     <input name="identifiant_admin" title="Prénom du meilleur prof de PHP (minuscule)" type="text">
   </li>
   <li>

@@ -26,6 +26,10 @@ $user = $_SESSION["connected_user"];
     <h2>Gestion Projets</h2>
     <i><a href="<?php echo $_url_base ?>admin/projets/list_projets.php" class="go">🥨</a></i>
   </li>
+  <li>
+    <h2>Gestion des Administrateurs</h2>
+    <i><a href="<?php echo $_url_base ?>admin/users/list_users.php" class="go">🥨</a></i>
+  </li>
 </ul>
 
 <footer class="nav">

@@ -31,7 +31,7 @@ if(!empty($_GET["technoedit"])) {
 
 <div class="flex" style="padding-top: 2rem">
 <input type="submit" value="Envoyer" />
-<button type="button"><a href="<?php echo $_url_base ?>admin/list_technos.php">Annuler</a></button>
+<button type="button"><a href="<?php echo $_url_base ?>admin/technos/list_technos.php">Annuler</a></button>
 </div>
 </form>
 
