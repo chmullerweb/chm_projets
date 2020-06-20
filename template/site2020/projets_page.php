@@ -1,15 +1,16 @@
 <?php include "include/head.php";
 
-// on importe le contenu de la table technos de ma bdd
 
 global $bdd;
+
+// on importe le contenu de la table technos de ma bdd
 
 $query = $bdd -> prepare("SELECT * from technos where iduu = :iduu");
 $query -> execute([":iduu" => "TEXT_TECHNO"]);
 $list_techno = $query ->  fetchAll(PDO::FETCH_ASSOC);
 
 // on importe le contenu de la table projets de ma bdd
-$query = $bdd -> prepare("SELECT * from projets where iduu = :iduu");
+$query = $bdd -> prepare("SELECT * from projets where iduu = :iduu ORDER BY ordre ASC");
 $query -> execute([":iduu" => "TEXT_PROJET"]);
 $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
 

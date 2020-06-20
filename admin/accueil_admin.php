@@ -8,7 +8,7 @@ $user = $_SESSION["connected_user"];
 
 ?>
 
-<h1>Bienvenue dans votre espace administration <?php echo $user["nom"] ?></h1>
+<h1><?php echo $user["nom"] ?>, Bienvenue dans votre espace administration </h1>
 <ul class="menu-admin">
   <li>
     <h2>Voir le site</h2>
