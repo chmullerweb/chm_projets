@@ -1,19 +1,17 @@
 <?php include "include/head.php"?>
 
-    
        
     <section class="title-projet">
-            <h1>Titre du projet</h1> <!--select title from projet*/-->
+            <h1><?php echo $projet_select["titre"]?></h1> 
     </section>
     
     <div class="description"> 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, laboriosam! Veritatis, perferendis molestias exercitationem deleniti minus iure ut mollitia. Doloremque repudiandae esse minima ipsam qui sint deserunt quia dolorum! Consectetur?
-        </p> <!--select description from projet*/-->
+        <p><?php echo $projet_select["presentation"]?></p> 
     </div>
     
     <div class="year flex">
         <h2>Année de création :</h2>
-        <p>XXXX</p>
+        <p><?php echo $projet_select["annee"]?></p>
     </div>
     
     <div class="techno">
@@ -24,15 +22,15 @@
     </div>
     
     <div class="photo_principale">
-        <img class="pix-projet-details-main" src="template/site2020/img/Codevores1.jpg" alt="">
+        <img class="pix-projet-details-main" src="<?php echo $_dossier_template . $projet_select["img_main"]?>" alt="">
     </div>
 
     <div class="photo_1">
-        <img class="pix-projet-details" src="template/site2020/img/Codevores2.jpg" alt="">
+        <img class="pix-projet-details" src="<?php echo $_dossier_template . $projet_select["img1"]?>" alt="">
     </div>
 
     <div class="photo_2">
-        <img class="pix-projet-details" src="template/site2020/img/Codevores3.jpg" alt="">
+        <img class="pix-projet-details" src="<?php echo $_dossier_template . $projet_select["img2"]?>" alt="">
     </div>
     
     

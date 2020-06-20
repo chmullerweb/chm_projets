@@ -66,7 +66,7 @@ $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
             
             ?>
             </p>
-            <a href="<?php echo $_url_base?>projet.php"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
+            <a href="<?php echo $_url_base . "projet.php?projetselect=" . $projet["id_projet"]?>"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
         </figcaption>
     </figure>
     <?php };?>
