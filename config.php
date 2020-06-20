@@ -56,6 +56,22 @@ function uneTechno ($idTechno) {
 
 };
 
+//ici je crée une fonction qui récupère l'id du projet 
+function unProjet ($idProjet) {
+    // retourne toutes les informations du projet qui a comme identifiant $idProjet
+
+    global $bdd;
+
+    #on prépare la requête en lui donnant une étiquette :idProjet
+    $query = $bdd -> prepare("select * from projets where id_projet = :idProjet");
+    
+    #on éxécute la requête
+    $query -> execute([":idProjet" => $idProjet]);
+    
+    return $query -> fetch(PDO::FETCH_ASSOC); // on utilise fetch et non fetchAll car nous souhaitons retourner un seul résultat.
+
+};
+
 
 // je crée une fonction pour récupérer les données de mes tables de ma bdd
 function MontrerValeur($table, $colonne) {

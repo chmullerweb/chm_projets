@@ -23,7 +23,7 @@ global $bdd;
       <!-- Les titres H2 devront faire référence à la bdd -->
     <h2 style="font-size: 1rem"><?php echo $projet["titre"]?></h2>  
     <a href="<?php echo $_url_base . "admin/projets/form_projet.php?projetedit=$projet[id_projet]"?>">Modifier</a>
-    <a <?php echo "onclick=\" return confirm('Voulez-vous effacer ce projet ?')\"" ?> href="<?php echo $_url_base . "admin/projets/delete_projet.php?projetdelete=$projet[id_techno]" ?>">Supprimer</a>
+    <a <?php echo "onclick=\" return confirm('Voulez-vous effacer ce projet ?')\"" ?> href="<?php echo $_url_base . "admin/projets/delete_projet.php?projetdelete=$projet[id_projet]" ?>">Supprimer</a>
   </li>
     <?php }; ?>
   <li>
