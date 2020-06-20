@@ -117,7 +117,7 @@ if(!empty($_GET["projetedit"])) {
 
 <div class="flex" style="padding-top: 2rem">
 <button type="submit">Envoyer</button>
-<button type="button"><a href="<?php echo $_url_base ?>admin/list_projets.php">Annuler</a></button>
+<button type="button"><a href="<?php echo $_url_base ?>admin/projets/list_projets.php">Annuler</a></button>
 </div>
 </form>
 <?php 
