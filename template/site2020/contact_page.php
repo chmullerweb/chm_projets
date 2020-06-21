@@ -1,4 +1,15 @@
-<?php include "include/head.php"?>
+<?php include "include/head.php";
+
+// on importe le contenu de la table reseaux de ma bdd
+
+global $bdd;
+
+$query = $bdd -> prepare("SELECT * from reseaux where iduu = :iduu");
+$query -> execute([":iduu" => "TEXT_RESEAU"]);
+$valreseau = $query ->  fetchAll(PDO::FETCH_ASSOC);
+
+?>
+?>
  
     
 <div class="title">
@@ -9,14 +20,14 @@
         <img class="contact-pix" src="<?php echo $_dossier_template ?>img/phone.png" alt="">
         <figcaption class="figcaption-contact">
             <h2>Appelez-moi</h3>
-            <p><a href="tel:0669116750">06 69 11 67 50</a></p>  <!--créer dans la bdd, l'enregistrement -->
+            <p><a href="<?php echo "tel:" . $valreseau[2]["lien"]?>"><?php echo $valreseau[2]["lien"]?></a></p>  <!--créer dans la bdd, l'enregistrement -->
         </figcaption>
     </figure>
     <figure class="bloc-contact mail">
     <img class="contact-pix" src="<?php echo $_dossier_template ?>img/mail.png" alt="">
         <figcaption class="figcaption-contact">
             <h2>Ecrivez-moi</h3>
-            <p><a href="mailto:ch_muller@outlook.fr">ch_muller@outlook.fr</a></p>  <!--lister à la suite avec du php -->
+            <p><a href="<?php echo "mailto:" . $valreseau[3]["lien"]?>"><?php echo $valreseau[3]["lien"]?></a></p>  <!--lister à la suite avec du php -->
         </figcaption>
     </figure>
     <figure class="bloc-contact networks">
@@ -25,11 +36,15 @@
             <h2>Restons en contact</h3>
             <div class="git flex">
                 <p>Github</p>
+               <a href="<?php echo $valreseau[1]["lien"]?>">
                <img class="pix-networks" src="template/site2020/img/github.png" alt="">
+               </a>
             </div>
             <div class="linkedin flex">
                 <p>LinkedIn</p>
+                <a href="<?php echo $valreseau[0]["lien"]?>">
                <img class="pix-networks" src="template/site2020/img/linkedin.png" alt="">
+               </a>
             </div>
         </figcaption>
     </figure>
