@@ -11,7 +11,8 @@ if(!empty($_POST)) {
     //
 
     if(empty($_POST["id_projet"]) || $_POST["id_projet"] == 0) {
-        // je n'envoie pas d'ID donc je peux ajouter une nouvelle techno
+        // je n'envoie pas d'ID donc je peux ajouter un nouveau projet
+  
         $query = $bdd -> prepare("INSERT INTO projets (titre, presentation, lien, annee, ordre, visible)
                                  VALUES (:titre, :presentation, :lien, :annee, :ordre, :visible)");
                                                                  
@@ -23,9 +24,18 @@ if(!empty($_POST)) {
                     ":ordre" => trim($_POST["ordre"]),
                     ":visible" => trim($_POST["visible"]),
                     ]);
+        
 
         $projetID = $bdd -> lastInsertId(); // lastInsertId retourne l'identifiant de la dernière ligne insérée en base de données. Ici, c'est l'ID de la techno que nous venons d'ajouter dans la base. SQL va lui assigner un id puisque l'incrémentation se fait automatique. J'encapsule cette valeur dans une variable $projetID pour pouvoir la traiter plus tard si besoin
-            header ("location:list_projets.php?newprojet=$_POST[titre].$projetID");
+        
+         $request = $bdd -> prepare("INSERT INTO projets_technos (projet_id, techno_id) VALUE (:projet_id, :techno_id");
+
+         $request -> execute([
+             ":projet_id" => $projetID,
+             ":techno_id" => $_POST["id_techno"],
+     ]);
+        
+        header ("location:list_projets.php?newprojet=$_POST[titre].$projetID");
             exit;
 
     } else {
@@ -42,17 +52,31 @@ if(!empty($_POST)) {
             ":visible" => trim($_POST["visible"]),
         ]);
 
-        $projetID = $_POST["id_projet"]; // lastInsertId Retourne l'identifiant de la dernière ligne insérée en base. ici, c'est l'ID de la techno à modifier dans la base.
+        $projetID = $_POST["id_projet"]; 
+
+        $nbTechnoSelected = $_POST["techno"];
+        foreach($nbTechnoSelected as $key => $technoSelected){
+            $request = $bdd -> prepare("UPDATE projets_technos SET techno_id=:techno_id WHERE projet_id=:projet_id");
+
+            $request -> execute([
+                ":projet_id" => $projetID,
+                ":techno_id" => $technoSelected,
+       ]);
+        };
+         
+        vd($nbTechnoSelected);
 
         header ("location:list_projets.php?projetedit=$_POST[titre].$projetID");
+        exit;
     }
+
+    
 }
 
 
 
 
 // Je vérifie le fichier photo d'img_main
-        
         #Je vérifie que la variable $_FILE existe et que le fichier remis ne génère pas d'erreur
         if(!empty($_FILES["img_main"]) && $_FILES["img_main"]["error"] == 0){
             
@@ -75,7 +99,7 @@ if(!empty($_POST)) {
             
             move_uploaded_file($_FILES["img_main"]["tmp_name"], $chemin_fichier_destination);
             
-        }
+        };
 
 // Je vérifie le fichier photo d'img1
         
@@ -127,13 +151,7 @@ if(!empty($_POST)) {
                 
                 move_uploaded_file($_FILES["img2"]["tmp_name"], $chemin_fichier_destination);
                 
-            }
-
-        
-        //var_dump($_FILES);
-        //var_dump($chemin_fichier_destination);
-        //var_dump($resultNbVal); 
+            } 
     
-        header("location:list_projets.php");
 
           

@@ -16,6 +16,16 @@ if(!empty($_GET["projetedit"])) {
   // si j'ai un paramètre d'URL, c'est que je peux éditer le projet et récupérer ses enregistrements
   $projetedit = $bdd -> query("SELECT * from projets where id_projet = " . $_GET["projetedit"]) -> fetch();
   // sinon le projet est nouveau et les input sont vides
+
+  // on importe le nomtechno de la bdd en passant par la table de jointure projets_techno
+        // on sélectionne uniquement les technos utilisées pour le $projetedit via son id_projet
+        $query = $bdd -> query("SELECT * from projets_technos, projets, technos where 
+        projets.id_projet = projets_technos.projet_id
+        AND technos.id_techno = projets_technos.techno_id
+        AND id_projet = $projetedit[id_projet]");
+
+      $technologies = $query -> fetchAll(PDO::FETCH_ASSOC);
+
 } else {
   $projetedit = [];
   $projetedit["titre"] = "";
@@ -23,10 +33,11 @@ if(!empty($_GET["projetedit"])) {
   $projetedit["lien"] = "";
   $projetedit["annee"] = "";
   $projetedit["ordre"] = "";
-  $projetedit["online"] = "";
+  $projetedit["visible"] = "";
  
 }
 
+     
 ?>
 
 <h1>Editer la liste des projets</h1>
@@ -73,16 +84,30 @@ if(!empty($_GET["projetedit"])) {
 
   <li>
   <h2>Les technos utilisées</h2>
-            <!-- !!!!!!!!!!!!!!!!!!!!!!!   A FAIRE Coche les technos utilisées actuellement : si techno_id et projet_id existe alors input checked. Dans le for_resp récupérer le techno_id et l'insérer dans la join table-->
+            <?php if(!empty($_GET["projetedit"])) {?>
             <div class="techno-list">
-        <?php foreach($list_techno as $key => $techno){ ?>
-            <div class="flex">
-            <input type="checkbox" id="<?php echo $techno["nomtechno"]?>" name="<?php echo $techno["nomtechno"]?>" class="input-search" value="<?php $techno["id_techno"]?>">
-                <label for="<?php echo $techno["nomtechno"]?>"><?php echo $techno["nomtechno"]?></label>
-            </div>
-<?php }; ?>
+             <?php foreach($technologies as $key => $technocheck){
+              if(isset($technocheck["techno_id"])){?>
+              <input type="checkbox" id="<?php echo $technocheck["nomtechno"]?>" class="input-search" value="<?php echo $technocheck["id_techno"]?>" checked>
+              <label for="<?php echo $technocheck["nomtechno"]?>"><?php echo $technocheck["nomtechno"]?></label>
+            <?php echo "<br>"; } }; ?>
+   </div>
+              <?php } else { echo "<br>"; }; ?>
   </li>
 
+  <li>
+  <h2>Les technos possibles</h2>
+  
+  <div class="techno-list">
+  <?php 
+  
+              foreach($list_techno as $key => $techno){?>
+              <input type="checkbox" id="<?php echo $techno["nomtechno"]?>" name="techno[]" class="input-search" value="<?php echo $techno["id_techno"]?>">
+              <label for="<?php echo $techno["nomtechno"]?>"><?php echo $techno["nomtechno"]?></label>
+            <?php echo "<br>"; }; ?>
+
+  </div>
+  </li>
   <li>
       
        <!-- Modifie les photos du projet -->

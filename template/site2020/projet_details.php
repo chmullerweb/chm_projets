@@ -1,4 +1,14 @@
-<?php include "include/head.php"?>
+<?php include "include/head.php";
+
+// on importe le nomtechno de la bdd en passant par la table de jointure projets_techno
+        // on sélectionne uniquement les technos utilisées pour le $projet_select via son id_projet
+        $query = $bdd -> query("SELECT nomtechno from projets_technos, projets, technos where 
+        projets.id_projet = projets_technos.projet_id
+        AND technos.id_techno = projets_technos.techno_id
+        AND id_projet = $projet_select[id_projet]");
+
+      $technologies = $query -> fetchAll(PDO::FETCH_ASSOC);
+?>
 
        
     <section class="title-projet">
@@ -16,8 +26,11 @@
     
     <div class="techno">
         <h2>Technologies utilisées :</h2>
-           <ul> <!--select techno_id from projet, from techno, from projet_techno + FOREACH*/-->
-            <li>CSS<li>
+           <ul>
+           <?php // J'affiche uniquement les technos qui sont référencées pour ce projet dans ma table de jointure projets_techno
+           foreach($technologies as $key => $techno){?>
+           <li><?php echo $techno["nomtechno"];?></li>
+           <?php }; ?>
         </ul>
     </div>
     
