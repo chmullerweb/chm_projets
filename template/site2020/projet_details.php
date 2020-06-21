@@ -33,6 +33,18 @@
         <img class="pix-projet-details" src="<?php echo $_dossier_template . $projet_select["img2"]?>" alt="">
     </div>
 
+    <!-- Je propose à l'utilisateur d'aller voir le site du projet seulement si un lien url existe -->
+    <?php 
+    if(empty($projet_select["lien"]) || $projet_select["lien"] === ""){
+    } else {?>
+        <div class="visit" style="grid-row-start:7; grid-column-end: span 12;">
+        <button type="button">
+        <a href="<?php echo $projet_select["lien"]?>">Aller voir le site !</a>
+        </button>
+    </div>
+
+    <?php } ?>
+
     <!-- Je propose à l'utilisateur de naviguer parmi mes projets -->
     <div class="pagination flex" style="grid-row-start:8; grid-column-end: span 12; justify-content:space-evenly;">
         <?php 

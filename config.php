@@ -28,7 +28,7 @@ $titleAdmin = "Administration - monBook";
 
 $_dossier_template = "template/site2020/"; // repertoire dans lequel j'ai mis l'ensemble des gabarits de mon site
 
-$_url_base = "http://localhost/coursphp/chm_projets/";
+$_url_base = "http://localhost/coursphp/monbook/";
 //  c'est l'url pour accéder à la page d'accueil de mon site.
 
 
