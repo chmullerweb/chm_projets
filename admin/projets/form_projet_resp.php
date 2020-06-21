@@ -12,15 +12,17 @@ if(!empty($_POST)) {
 
     if(empty($_POST["id_projet"]) || $_POST["id_projet"] == 0) {
         // je n'envoie pas d'ID donc je peux ajouter une nouvelle techno
-        $query = $bdd -> prepare("INSERT INTO projets (titre, presentation, lien, annee, ordre)
-                                 VALUES (:titre, :presentation, :lien, :annee, :ordre)");
+        $query = $bdd -> prepare("INSERT INTO projets (titre, presentation, lien, annee, ordre, visible)
+                                 VALUES (:titre, :presentation, :lien, :annee, :ordre, :visible)");
                                                                  
         $query -> execute([
                     ":nom" => trim($_POST["titre"]),
                     ":presentation" => trim($_POST["presentation"]),
                     ":lien" => trim($_POST["lien"]),
                     ":annee" => trim($_POST["annee"]),
-                    ":ordre" => trim($_POST["ordre"])]);
+                    ":ordre" => trim($_POST["ordre"]),
+                    ":visible" => trim($_POST["visible"]),
+                    ]);
 
         $projetID = $bdd -> lastInsertId(); // lastInsertId retourne l'identifiant de la dernière ligne insérée en base de données. Ici, c'est l'ID de la techno que nous venons d'ajouter dans la base. SQL va lui assigner un id puisque l'incrémentation se fait automatique. J'encapsule cette valeur dans une variable $projetID pour pouvoir la traiter plus tard si besoin
             header ("location:list_projets.php?newprojet=$_POST[titre].$projetID");
@@ -28,7 +30,7 @@ if(!empty($_POST)) {
 
     } else {
         // un id connu de ma $bdd est envoyé, alors je modifie un enregistrement.
-        $query = $bdd -> prepare("UPDATE projets SET titre=:titre, presentation=:presentation, lien=:lien, annee=:annee, ordre=:ordre WHERE id_projet = :idprojet");
+        $query = $bdd -> prepare("UPDATE projets SET titre=:titre, presentation=:presentation, lien=:lien, annee=:annee, ordre=:ordre, visible=:visible WHERE id_projet = :idprojet");
         
         $query -> execute([
             ":idprojet" => trim($_POST["id_projet"]),
@@ -37,6 +39,7 @@ if(!empty($_POST)) {
             ":lien" => trim($_POST["lien"]),
             ":annee" => trim($_POST["annee"]),
             ":ordre" => trim($_POST["ordre"]),
+            ":visible" => trim($_POST["visible"]),
         ]);
 
         $projetID = $_POST["id_projet"]; // lastInsertId Retourne l'identifiant de la dernière ligne insérée en base. ici, c'est l'ID de la techno à modifier dans la base.

@@ -52,7 +52,11 @@ $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
             AND id_projet = $projet[id_projet]");
 
           $technologies = $query -> fetchAll(PDO::FETCH_ASSOC);
-    ?>
+    
+          // J'affiche sur mon site que les projets à mettre en ligne
+    if($projet["visible"] === 0 || empty($projet["visible"])){
+
+    } else {  ?>
     
     <figure class="bloc-pix-projet" style="margin:0">
         <img class="projet-pix" src="<?php echo $_dossier_template . $projet["img_main"]?>" alt="">
@@ -70,9 +74,13 @@ $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
             <a href="<?php echo $_url_base . "projet.php?projetselect=" . $projet["id_projet"]?>"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
         </figcaption>
     </figure>
-    <?php };?>
+    <?php 
+};
+};
+?>
 </section>
 
 
 
-<?php include "include/footer.php"?>
+<?php
+include "include/footer.php"?>

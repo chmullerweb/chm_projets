@@ -23,6 +23,7 @@ if(!empty($_GET["projetedit"])) {
   $projetedit["lien"] = "";
   $projetedit["annee"] = "";
   $projetedit["ordre"] = "";
+  $projetedit["online"] = "";
  
 }
 
@@ -84,10 +85,7 @@ if(!empty($_GET["projetedit"])) {
 
   <li>
       
-    <!-- <input type="checkbox" checked>
-    <i></i> -->
-
-    <!-- Modifie les photos du projet -->
+       <!-- Modifie les photos du projet -->
     <h2>Photo principale</h2>
             <!-- Récupère l'image qui est en ligne actuellement -->
     <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img_main"]?>" alt="" style="width:4rem">
@@ -111,6 +109,24 @@ if(!empty($_GET["projetedit"])) {
     <h2>Ordre</h2>
             <!-- Récupère le numéro qui est affiché actuellement -->
     <input name="ordre" value="<?php echo $projetedit["ordre"] ?>">
+  </li>
+
+  <li>
+    <!-- Modifie la mise en ligne du projet -->
+    <h2>Projet en ligne : </h2>
+            <!-- Récupère le numéro qui est affiché actuellement -->
+    <?php    
+     if($projetedit["visible"] === "0" || empty($projetedit["visible"])){?>
+    <label for="online-oui">Oui</label>
+    <input id="online-oui" type="radio" name="visible" value="1">
+    <label for="online-non">Non</label>
+    <input id="online-non" type="radio" name="visible" value="0" checked>
+    <?php } else if($projetedit["visible"] === "1"){?>
+    <label for="online-oui">Oui</label>
+    <input id="online-oui" type="radio" name="visible" value="1" checked>
+    <label for="online-non">Non</label>
+    <input id="online-non" type="radio" name="visible" value="0">
+    <?php }; ?>
   </li>
   
 </ul>
