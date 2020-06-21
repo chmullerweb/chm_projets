@@ -8,7 +8,7 @@ global $bdd;
 
 $query = $bdd -> prepare("SELECT * from technos where iduu = :iduu");
 $query -> execute([":iduu" => "TEXT_TECHNO"]);
-$list_techno = $query ->  fetchAll(PDO::FETCH_ASSOC);
+$list_techno = $query -> fetchAll(PDO::FETCH_ASSOC);
 
 // je vérifie plusieurs conditions pour savoir si le formulaire va rentrer un nouvel enregistrement ou l'éditer
 
@@ -19,15 +19,14 @@ if(!empty($_GET["projetedit"])) {
 
   // on importe le nomtechno de la bdd en passant par la table de jointure projets_techno
         // on sélectionne uniquement les technos utilisées pour le $projetedit via son id_projet
-        $query = $bdd -> query("SELECT * from projets_technos, projets, technos where 
+        $request = $bdd -> query("SELECT * from projets_technos, projets, technos where 
         projets.id_projet = projets_technos.projet_id
         AND technos.id_techno = projets_technos.techno_id
-        AND id_projet = $projetedit[id_projet]");
+        AND id_projet = $_GET[projetedit]"); 
 
-      $technologies = $query -> fetchAll(PDO::FETCH_ASSOC);
+      $technologies = $request -> fetchAll(PDO::FETCH_ASSOC);
 
 } else {
-  $projetedit = [];
   $projetedit["titre"] = "";
   $projetedit["presentation"] = ""; 
   $projetedit["lien"] = "";
@@ -37,16 +36,13 @@ if(!empty($_GET["projetedit"])) {
  
 }
 
-     
+// vd($technologies);
 ?>
 
 <h1>Editer la liste des projets</h1>
 <form enctype="multipart/form-data" action="form_projet_resp.php" method="post">
 <ul>
     <li>
-
-    <!-- <input type="checkbox" checked>
-    <i></i> -->
 
     <h2>Nom du projet</h2>
             <!-- Récupère le texte qui est affiché actuellement s'il existe -->
@@ -86,11 +82,10 @@ if(!empty($_GET["projetedit"])) {
   <h2>Les technos utilisées</h2>
             <?php if(!empty($_GET["projetedit"])) {?>
             <div class="techno-list">
-             <?php foreach($technologies as $key => $technocheck){
-              if(isset($technocheck["techno_id"])){?>
+             <?php foreach($technologies as $key => $technocheck){?>
               <input type="checkbox" id="<?php echo $technocheck["nomtechno"]?>" class="input-search" value="<?php echo $technocheck["id_techno"]?>" checked>
               <label for="<?php echo $technocheck["nomtechno"]?>"><?php echo $technocheck["nomtechno"]?></label>
-            <?php echo "<br>"; } }; ?>
+            <?php echo "<br>"; }; ?>
    </div>
               <?php } else { echo "<br>"; }; ?>
   </li>

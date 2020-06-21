@@ -14,6 +14,7 @@ $query = $bdd -> prepare("SELECT * from projets where iduu = :iduu ORDER BY ordr
 $query -> execute([":iduu" => "TEXT_PROJET"]);
 $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
 
+
 ?>
 
 
