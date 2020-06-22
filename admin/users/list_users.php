@@ -14,7 +14,7 @@ global $bdd;
 <ul class="menu-admin">
 
     <?php 
-//Affichage des technologies depuis la base de donnée
+//Affichage des users depuis la base de donnée
 
     foreach($list_user_admin as $key => $user){
 ?>

@@ -7,7 +7,9 @@
     <title><?php echo $title?></title>
 
     <!--ICONES-->
-
+    <script src="https://kit.fontawesome.com/39ca2ad730.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="<?php echo $_url_base . $_dossier_template ?>img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo $_url_base . $_dossier_template ?>img/favicon.ico" type="image/x-icon">
 
     <!-- ////   CSS   //// -->
     <link rel="stylesheet" href="template/site2020/css/cssreset.css">

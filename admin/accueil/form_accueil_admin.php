@@ -16,8 +16,7 @@ global $bdd;
 <form enctype="multipart/form-data" action="form_accueil_admin_resp.php" method="post">
     <ul>
         <li>
-
-            <!-- Modifie le $titre dans config et toutes les fois où cette variable est appelée -->
+            <!-- Modifie aussi le $titre dans config -->
             <h2>Nom du profil</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
             <input type="text" name="nomprofil" value="<?php echo trim($val[0]["nomprofil"])?>">
@@ -36,7 +35,6 @@ global $bdd;
         <li>
             <!-- Modifie la photo de profil -->
             <h2>Photo de profil</h2>
-
             <!-- MAX_FILE_SIZE précéde l'input de type file. Il dit la taille maximum du fichier que l'on peut envoyer -->
             <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
 
@@ -51,5 +49,5 @@ global $bdd;
         <button><a href="<?php echo $_url_base ?>admin/accueil_admin.php">Annuler</a></button>
     </div>
 </form>
-<?php 
-include "../include/footer_admin.php" ?>
+
+<?php include "../include/footer_admin.php" ?>
