@@ -13,21 +13,21 @@ global $bdd;
 <h1>Gestion des adminstrateurs</h1>
 <ul class="menu-admin">
 
-<?php 
+    <?php 
 //Affichage des technologies depuis la base de donnée
 
     foreach($list_user_admin as $key => $user){
 ?>
     <li>
-    <h2><?php echo $user["nom"] ?><h2>
-    <a href="<?php echo $_url_base . "admin/users/form_users.php?useredit=$user[id_admin]"?>">Modifier</a>
-    <a <?php echo "onclick=\" return confirm('Voulez-vous effacer cet administrateur ?')\"" ?> href="<?php echo $_url_base . "admin/users/delete_users.php?userdelete=$user[id_admin]"?>">Supprimer</a>
+        <h2><?php echo $user["nom"] ?></h2>
+                <a href="<?php echo $_url_base . "admin/users/form_users.php?useredit=$user[id_admin]"?>">Modifier</a>
+                <a <?php echo "onclick=\" return confirm('Voulez-vous effacer cet administrateur ?')\"" ?> href="<?php echo $_url_base . "admin/users/delete_users.php?userdelete=$user[id_admin]"?>">Supprimer</a>
     </li>
-<?php }; ?>
-  
+    <?php }; ?>
+
     <li>
-    <button><a href="<?php echo $_url_base ?>admin/users/form_users.php">Ajouter</a></button>
-   </li>
+        <button><a href="<?php echo $_url_base ?>admin/users/form_users.php">Ajouter</a></button>
+    </li>
 </ul>
 
 <?php 

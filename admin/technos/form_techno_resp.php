@@ -39,7 +39,3 @@ if(!empty($_POST)) {
         header ("location:list_technos.php?technoedit=$_POST[nomtechno].$technoID");
     }
 }
-
-
-
-

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titleAdmin?></title>
-    
+
     <!--ICONES-->
-    
-    
+
+
     <!-- ////   CSS   //// -->
     <link rel="stylesheet" href="<?php echo $_url_base . $_dossier_template ?>css/cssreset.css">
     <link rel="stylesheet" href="<?php echo $_url_base ?>admin/css/style_admin.css">
@@ -23,4 +24,3 @@
 
 
 <body>
-

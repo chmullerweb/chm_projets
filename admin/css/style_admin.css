@@ -1,23 +1,24 @@
-html{
-  width: 100%;
-  height: 100%;
-  perspective: 900;
-  overflow-y: scroll;
-  color: black;
-}
-.flex{
-  display:flex;
+html {
+    width: 100%;
+    height: 100%;
+    perspective: 900;
+    overflow-y: scroll;
+    color: black;
 }
 
-body{
-  min-height: 0;
-  display: inline-block;
-  position: relative;
-  left: 8rem;
-  margin: 90px 0;
-/*  transform: translate( -50% , 0 ) */
-  max-width: 450px;
-  padding: 30px;
+.flex {
+    display: flex;
+}
+
+body {
+    min-height: 0;
+    display: inline-block;
+    position: relative;
+    left: 8rem;
+    margin: 90px 0;
+    /*  transform: translate( -50% , 0 ) */
+    max-width: 450px;
+    padding: 30px;
     background: url("../../template/site2020/img/philip-brown-EinKdyLyK98-unsplash.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -26,78 +27,74 @@ body{
     font-family: Raleway;
 }
 
-  @media ( max-width:550px ){
-    body{
+@media (max-width:550px) {
+    body {
         left: 0rem;
     }
 }
 
-h1 , h2{
-  color: red;
+h1,
+h2 {
+    color: red;
 }
 
-h1{
-  text-transform: uppercase;
-  font-size: 2rem;
-  line-height: 42px;
-  letter-spacing: 3px;
-  font-weight: 100;
-  /*@extend .flipIn*/
+h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 42px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    /*@extend .flipIn*/
 }
 
-h2{
-  font-size: 26px;
-  line-height: 34px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  display: block;
-  margin: 0;
-  /*@extend .no-select*/
+h2 {
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+    margin: 0;
+    /*@extend .no-select*/
 }
 
-p{
-  color: black;
-  font-size: 17px;
-  line-height: 26px;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  max-height: 800px;
-  /*@extend .transition*/
-  opacity: 1;
-  /*transform: translate( 0 , 0 )*/  
-  margin-top: 14px;
-  z-index: 2;
+p {
+    color: black;
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    max-height: 800px;
+    /*@extend .transition*/
+    opacity: 1;
+    /*transform: translate( 0 , 0 )*/
+    margin-top: 14px;
+    z-index: 2;
 }
 
-ul{
-  list-style: none;
-  perspective: 900;
-  padding: 0;
-  margin: 0;
+ul {
+    list-style: none;
+    perspective: 900;
+    padding: 0;
+    margin: 0;
 }
 
-ul li{
-    position: relative
-    padding: 0
-    margin: 0
-    padding-bottom: 4px
-    padding-top: 18px
-    border-top: 1px dotted $grey
+ul li {
+    position: relative padding: 0 margin: 0 padding-bottom: 4px padding-top: 18px border-top: 1px dotted $grey
 }
 
-.menu-admin li{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.menu-admin li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.go{
-  text-decoration: none;
-  font-style: normal;
+.go {
+    text-decoration: none;
+    font-style: normal;
 }
 
-.lock{
+.lock {
     width: 5rem;
     display: block;
     margin-left: auto;
@@ -105,36 +102,33 @@ ul li{
     padding-bottom: 2rem;
 }
 
-i{
-position: absolute
-transform: translate( -6px , 0 )
-margin-top: 16px
-right: 0
+i {
+    position: absolute transform: translate(-6px, 0) margin-top: 16px right: 0
 }
 
 /*////////////// FOOTER MENU NAV //////////////*/
 
-.nav{
-  margin-top: 5rem;
+.nav {
+    margin-top: 5rem;
 }
 
 .nav ul {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .nav ul li {
-  list-style: none;
-  padding-right: 1rem;
+    list-style: none;
+    padding-right: 1rem;
 }
 
 .nav a {
-  text-decoration: none;
-  color: black;
-  padding-bottom: 0.5rem;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 0.5rem;
 }
 
 .nav a:hover {
-  border-bottom: 2px rgb(52, 161, 22) solid;
+    border-bottom: 2px rgb(52, 161, 22) solid;
 }
 
 
@@ -156,7 +150,7 @@ right: 0
   user-select: none
 */
 
-   /* @extend .flipIn
+/* @extend .flipIn
       
     &:nth-of-type(1)
       animation-delay: 0.5s

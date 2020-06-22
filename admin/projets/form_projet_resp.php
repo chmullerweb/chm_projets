@@ -155,10 +155,12 @@ if(!empty($_POST)) {
         $projetID = $_POST["id_projet"]; 
 
         // Tentative de modifier la liste des technologies depuis le formulaire
+        if(isset($_POST["techno"])){
         $nbTechnoSelected = $_POST["techno"];
         foreach($nbTechnoSelected as $key => $technoSelected){
             $request = $bdd -> query("UPDATE projets_technos SET projet_id=$projetID, techno_id=:$technoSelected WHERE $_POST[id_projet]");
         };
+        }
          
         //vd($nbTechnoSelected);
         vd($query);

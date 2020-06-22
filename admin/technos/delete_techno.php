@@ -13,4 +13,3 @@ if(!isset($_GET["technodelete"])) { // on verifie que nous avons bien l'identifi
     $bdd -> query("DELETE FROM technos WHERE id_techno = " . $_GET["technodelete"]);
     header ("location:list_technos.php?technodelete=$laTechno[nomtechno]");
 };
-

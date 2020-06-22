@@ -12,332 +12,332 @@
 /* Ecran à partir de 841px */
 @media screen and (min-width: 841px) {
 
-/*///// MENU /////*/
+    /*///// MENU /////*/
 
-.nav {
-    grid-row-start: 1;
-    grid-column-end: span 12;
-}
+    .nav {
+        grid-row-start: 1;
+        grid-column-end: span 12;
+    }
 
-/*///// TITRE /////*/
+    /*///// TITRE /////*/
 
-.title{
-    grid-row-start: 2;
-    grid-column-end: span 12;
-    text-align: center;
-}
+    .title {
+        grid-row-start: 2;
+        grid-column-end: span 12;
+        text-align: center;
+    }
 
-/*///// ACCUEIL /////*/
+    /*///// ACCUEIL /////*/
 
-.header{
-    width: 100%;
-    grid-row-start: 2;
-    grid-row-end: span 2;
-    grid-column-end: span 3;
-}
+    .header {
+        width: 100%;
+        grid-row-start: 2;
+        grid-row-end: span 2;
+        grid-column-end: span 3;
+    }
 
-.claim{
-    width: 100%;
-    height: 11rem;
-    grid-row-start: 2;
-    grid-column-end: span 6;
+    .claim {
+        width: 100%;
+        height: 11rem;
+        grid-row-start: 2;
+        grid-column-end: span 6;
 
-}
+    }
 
-.hello{
-   width: 100%;
-    height: 11rem;
-    grid-row-start: 2;
-    grid-column-start: 10;
-    grid-column-end: span 3;
-} 
+    .hello {
+        width: 100%;
+        height: 11rem;
+        grid-row-start: 2;
+        grid-column-start: 10;
+        grid-column-end: span 3;
+    }
 
-.hobbies{
-   width: 100%;
-    height: 12.1rem;
-    grid-row-start: 3;
-    grid-column-start: 4;
-    grid-column-end: span 4;
-}
+    .hobbies {
+        width: 100%;
+        height: 12.1rem;
+        grid-row-start: 3;
+        grid-column-start: 4;
+        grid-column-end: span 4;
+    }
 
-.profil-pix-bloc{
-    width: 100%;
-    height: 32rem;
-    grid-row-start: 3;
-    grid-row-end: span 2;
-    grid-column-start: 8;
-    grid-column-end: span 5;
-}
-    
-.surprise{
-    width: 100%;
-    height: 18rem;
-    grid-row-start: 4;
-    grid-column-start: 1;
-    grid-column-end: span 7;
-}
+    .profil-pix-bloc {
+        width: 100%;
+        height: 32rem;
+        grid-row-start: 3;
+        grid-row-end: span 2;
+        grid-column-start: 8;
+        grid-column-end: span 5;
+    }
 
-/*///// BLOCS PHOTOS PROJETS ////*/
-.grid-projet{
-    display: inline-grid;
-    grid-gap: 32px;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 28rem));
-    margin: auto;
-    grid-column: 5/12;
-}
+    .surprise {
+        width: 100%;
+        height: 18rem;
+        grid-row-start: 4;
+        grid-column-start: 1;
+        grid-column-end: span 7;
+    }
 
-.bloc-pix-projet{
-    width: 30rem;
-    height: 18rem;
-}
-    
+    /*///// BLOCS PHOTOS PROJETS ////*/
+    .grid-projet {
+        display: inline-grid;
+        grid-gap: 32px;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 28rem));
+        margin: auto;
+        grid-column: 5/12;
+    }
 
-/*///// SEARCH BAR /////*/
+    .bloc-pix-projet {
+        width: 30rem;
+        height: 18rem;
+    }
 
 
-.search{
-    grid-row-start: 3;
-    grid-row-end: span 2;
-    grid-column-end: span 3;
-}
-    
-    .search-bloc{
+    /*///// SEARCH BAR /////*/
+
+
+    .search {
+        grid-row-start: 3;
+        grid-row-end: span 2;
+        grid-column-end: span 3;
+    }
+
+    .search-bloc {
         align-items: center;
     }
 
 
-/*///// CONTACT ////*/
+    /*///// CONTACT ////*/
 
-.bloc-contact{
-    position: relative;
-    margin : 0;
-    grid-row-start: 3;
-    grid-row-end: span 4;
-    height: 13rem;
-    width: 20rem;
-}
+    .bloc-contact {
+        position: relative;
+        margin: 0;
+        grid-row-start: 3;
+        grid-row-end: span 4;
+        height: 13rem;
+        width: 20rem;
+    }
 
-.phone{
-    grid-column-start: 1;
-    grid-column-end: 4;
-}
+    .phone {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
 
-.mail{
-    grid-column-start: 5;
-    grid-column-end: 8;
-} 
+    .mail {
+        grid-column-start: 5;
+        grid-column-end: 8;
+    }
 
-.networks{
-    grid-column-start: 9;
-    grid-column-end: 12;
-}
+    .networks {
+        grid-column-start: 9;
+        grid-column-end: 12;
+    }
 
-/*///// PROJET DETAILS ////*/
+    /*///// PROJET DETAILS ////*/
 
-.title-projet{
-width: 100%;
-grid-row-start: 2;
-grid-column-end: span 4;
-}
+    .title-projet {
+        width: 100%;
+        grid-row-start: 2;
+        grid-column-end: span 4;
+    }
 
-.description{
-grid-row-start: 3;
-grid-column: 1/ span 4;
-}
+    .description {
+        grid-row-start: 3;
+        grid-column: 1/ span 4;
+    }
 
-.year{
-    grid-row-start: 4;
-grid-column: 1 / span 4;
-justify-content: space-between;
-}
+    .year {
+        grid-row-start: 4;
+        grid-column: 1 / span 4;
+        justify-content: space-between;
+    }
 
-.photo_principale{
-grid-row-start: 2;
-grid-row-end: span 2;
-grid-column: 6/span 3;
-}
+    .photo_principale {
+        grid-row-start: 2;
+        grid-row-end: span 2;
+        grid-column: 6/span 3;
+    }
 
-.photo_1{
-    grid-row-start: 4;
-    grid-column: 6 / span 2; 
-}
+    .photo_1 {
+        grid-row-start: 4;
+        grid-column: 6 / span 2;
+    }
 
-.photo_2{
-    grid-row-start: 4;
-    grid-column: 9 / span 2; 
-}
+    .photo_2 {
+        grid-row-start: 4;
+        grid-column: 9 / span 2;
+    }
 
-.techno{
-    grid-row-start: 6;
-    grid-column: 1/ span 3;
-}
+    .techno {
+        grid-row-start: 6;
+        grid-column: 1/ span 3;
+    }
 
-/*///// FOOTER ////*/
-.footer{
-    grid-row-start: 12;
-    grid-column-end: span 12;
-}
-    
+    /*///// FOOTER ////*/
+    .footer {
+        grid-row-start: 12;
+        grid-column-end: span 12;
+    }
+
 }
 
 
 @media screen and (max-width: 840px) {
-    
-    .body{
+
+    .body {
         grid-template-rows: repeat(7, auto);
     }
-    
-/*///// MENU /////*/
 
-.nav {
-    grid-column-end: span 11;
-}
+    /*///// MENU /////*/
+
+    .nav {
+        grid-column-end: span 11;
+    }
 
     /*///// TITRE /////*/
 
-.title{
-    grid-row-start: 2;
-    grid-column-end: span 12;
-    text-align: center;
-}
+    .title {
+        grid-row-start: 2;
+        grid-column-end: span 12;
+        text-align: center;
+    }
 
     /*///// ACCUEIL /////*/
 
-    .header{
+    .header {
         grid-row-start: 2;
         grid-row-end: 2;
         grid-column-end: span 11;
-    } 
-    
-    .hello{
+    }
+
+    .hello {
         grid-row-start: 3;
         grid-column-start: 1;
         grid-column-end: span 5;
     }
-    
-    .claim{
+
+    .claim {
         grid-row-start: 4;
         grid-column-start: 1;
         grid-column-end: span 11;
     }
-    
-    .hobbies{
+
+    .hobbies {
         grid-row-start: 5;
         grid-column-start: 1;
         grid-column-end: span 11;
     }
-    
-    .profil-pix-bloc{
+
+    .profil-pix-bloc {
         grid-row-start: 3;
         grid-column-start: 6;
         grid-column-end: span 6;
     }
-    
-    .profil-pix{
-        width: 100%!important;
-        height: 100%!important;
+
+    .profil-pix {
+        width: 100% !important;
+        height: 100% !important;
     }
-    
-    .surprise{
+
+    .surprise {
         grid-row-start: 6;
         grid-column-start: 1;
         grid-column-end: span 11;
     }
-    
+
     /*///// BLOCS PHOTOS PROJETS ////*/
-.grid-projet{
-    display: inline-grid;
-    grid-gap: 32px;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 28rem));
-    margin: auto;
-    grid-column: 1/12;
-}
-
-.bloc-pix-projet{
-    grid-column-end: span 2;
-    height: 16rem;
-}
-
-/*///// SEARCH BAR /////*/
-
-.search{
-    grid-row-start: 3;
-    grid-column-end: span 11;
-}
-
-/*///// CONTACT ////*/
-
-.bloc-contact{
-    height: 10rem;
-    width: 16rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 3rem;
-}
-
-.phone{
-    grid-row-start: 3;
-    grid-column-end: span 12;
-}
-
-.mail{
-    grid-row-start: 4;
-    grid-column-end: span 12;
-}
-
-.networks{
-    grid-row-start: 5;
-    grid-column-end: span 12;
-}
-
-/*///// PROJET DETAILS ////*/
-
-.title-projet{
-    width: 100%;
-    grid-row-start: 5;
-    grid-column-end: span 12;
+    .grid-projet {
+        display: inline-grid;
+        grid-gap: 32px;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 28rem));
+        margin: auto;
+        grid-column: 1/12;
     }
-    
-    .description{
-    grid-row-start: 6;
-    grid-column: 1/ span 12;
+
+    .bloc-pix-projet {
+        grid-column-end: span 2;
+        height: 16rem;
     }
-    
-    .year{
+
+    /*///// SEARCH BAR /////*/
+
+    .search {
+        grid-row-start: 3;
+        grid-column-end: span 11;
+    }
+
+    /*///// CONTACT ////*/
+
+    .bloc-contact {
+        height: 10rem;
+        width: 16rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 3rem;
+    }
+
+    .phone {
+        grid-row-start: 3;
+        grid-column-end: span 12;
+    }
+
+    .mail {
+        grid-row-start: 4;
+        grid-column-end: span 12;
+    }
+
+    .networks {
+        grid-row-start: 5;
+        grid-column-end: span 12;
+    }
+
+    /*///// PROJET DETAILS ////*/
+
+    .title-projet {
+        width: 100%;
+        grid-row-start: 5;
+        grid-column-end: span 12;
+    }
+
+    .description {
+        grid-row-start: 6;
+        grid-column: 1/ span 12;
+    }
+
+    .year {
         grid-row-start: 7;
-    grid-column: 1 / span 12;
-    justify-content: space-between;
-    }
-    
-    .photo_principale{
-    grid-row-start: 2;
-    grid-row-end: span 2;
-    grid-column: 1/span 3;
-    }
-    
-    .photo_1{
-        grid-row-start: 4;
-        grid-column: 1 / span 2; 
-    }
-    
-    .photo_2{
-        grid-row-start: 4;
-        grid-column: 7 / span 2; 
+        grid-column: 1 / span 12;
+        justify-content: space-between;
     }
 
-    .techno{
+    .photo_principale {
+        grid-row-start: 2;
+        grid-row-end: span 2;
+        grid-column: 1/span 3;
+    }
+
+    .photo_1 {
+        grid-row-start: 4;
+        grid-column: 1 / span 2;
+    }
+
+    .photo_2 {
+        grid-row-start: 4;
+        grid-column: 7 / span 2;
+    }
+
+    .techno {
         grid-row-start: 8;
         grid-column: 1/ span 12;
     }
 
-    
+
 
     /*///// FOOTER /////*/
 
-    .footer{
-    grid-row-start: 12;
-    grid-column-end: span 11;
-}
+    .footer {
+        grid-row-start: 12;
+        grid-column-end: span 11;
+    }
 
 
 }

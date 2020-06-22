@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title?></title>
-    
+
     <!--ICONES-->
-    
-    
+
+
     <!-- ////   CSS   //// -->
     <link rel="stylesheet" href="template/site2020/css/cssreset.css">
     <link rel="stylesheet" href="template/site2020/css/grid.css">
@@ -25,11 +26,10 @@
 
 <body class="grid">
 
-<header class="nav">
-        <nav>          
-            <ul class="flex">            
-               <?php include "nav.php" ?>
+    <header class="nav">
+        <nav>
+            <ul class="flex">
+                <?php include "nav.php" ?>
             </ul>
         </nav>
-</header>
-
+    </header>

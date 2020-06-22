@@ -72,6 +72,22 @@ function unProjet ($idProjet) {
 
 };
 
+//ici je crée une fonction qui récupère l'id du user 
+function unUser ($idUser) {
+    // retourne toutes les informations du projet qui a comme identifiant $idProjet
+
+    global $bdd;
+
+    #on prépare la requête en lui donnant une étiquette :idProjet
+    $query = $bdd -> prepare("select * from users where id_admin = :idAdmin");
+    
+    #on éxécute la requête
+    $query -> execute([":idAdmin" => $idUser]);
+    
+    return $query -> fetch(PDO::FETCH_ASSOC); // on utilise fetch et non fetchAll car nous souhaitons retourner un seul résultat.
+
+};
+
 
 // je crée une fonction pour récupérer les données de mes tables de ma bdd
 function MontrerValeur($table, $colonne) {
@@ -93,5 +109,3 @@ function vd($var){
     var_dump($var);
     echo "</pre>";
     }
-
-

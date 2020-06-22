@@ -42,120 +42,120 @@ if(!empty($_GET["projetedit"])) {
 
 <h1>Editer la liste des projets</h1>
 <form enctype="multipart/form-data" action="form_projet_resp.php" method="post">
-<ul>
-    <li>
+    <ul>
+        <li>
 
-    <h2>Nom du projet</h2>
+            <h2>Nom du projet</h2>
             <!-- Récupère le texte qui est affiché actuellement s'il existe -->
-    <input type="text" name="titre" value="<?php echo $projetedit["titre"] ?>">
-    <input type="hidden" name="id_projet" value="<?php echo $projetedit["id_projet"] ?>">
-  </li>
-  
-  <li>
-    <!-- <input type="checkbox" checked>
+            <input type="text" name="titre" value="<?php echo $projetedit["titre"] ?>">
+            <input type="hidden" name="id_projet" value="<?php echo $projetedit["id_projet"] ?>">
+        </li>
+
+        <li>
+            <!-- <input type="checkbox" checked>
     <i></i> -->
 
-        <!-- Modifie la presentation du projet -->
-        <h2>Description</h2>
+            <!-- Modifie la presentation du projet -->
+            <h2>Description</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
-    <textarea name="presentation" style="width:100%"> <?php echo $projetedit["presentation"] ?> </textarea>
-  </li>
+            <textarea name="presentation" style="width:100%"> <?php echo $projetedit["presentation"] ?> </textarea>
+        </li>
 
-  <li>
-      <!-- <input type="checkbox" checked>
+        <li>
+            <!-- <input type="checkbox" checked>
     <i></i> -->
 
-    <!-- Modifie l'année de création du projet -->
-    <h2>Année de création</h2>
+            <!-- Modifie l'année de création du projet -->
+            <h2>Année de création</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
-    <input name="annee" value="<?php echo $projetedit["annee"] ?>">
-  </li>
+            <input name="annee" value="<?php echo $projetedit["annee"] ?>">
+        </li>
 
-  <li>
-  <h2>Voir le site</h2>
+        <li>
+            <h2>Voir le site</h2>
             <!-- Récupère le texte qui est affiché actuellement -->
-    <input name="lien" value="<?php echo $projetedit["lien"] ?>" style="width:100%">
-  </li>
+            <input name="lien" value="<?php echo $projetedit["lien"] ?>" style="width:100%">
+        </li>
 
-  <li>
+        <li>
 
-  <li>
-  <h2>Les technos utilisées</h2>
+        <li>
+            <h2>Les technos utilisées</h2>
             <?php if(!empty($_GET["projetedit"])) {?>
             <div class="techno-list">
-             <?php foreach($technologies as $key => $technocheck){?>
-              <input type="checkbox" id="<?php echo $technocheck["nomtechno"]?>" class="input-search" value="<?php echo $technocheck["id_techno"]?>" checked>
-              <label for="<?php echo $technocheck["nomtechno"]?>"><?php echo $technocheck["nomtechno"]?></label>
-            <?php echo "<br>"; }; ?>
-   </div>
-              <?php } else { echo "<br>"; }; ?>
-  </li>
+                <?php foreach($technologies as $key => $technocheck){?>
+                <input type="checkbox" id="<?php echo $technocheck["nomtechno"]?>" class="input-search" value="<?php echo $technocheck["id_techno"]?>" checked>
+                <label for="<?php echo $technocheck["nomtechno"]?>"><?php echo $technocheck["nomtechno"]?></label>
+                <?php echo "<br>"; }; ?>
+            </div>
+            <?php } else { echo "<br>"; }; ?>
+        </li>
 
-  <li>
-  <h2>Les technos possibles</h2>
-  
-  <div class="techno-list">
-  <?php 
+        <li>
+            <h2>Les technos possibles</h2>
+
+            <div class="techno-list">
+                <?php 
   
               foreach($list_techno as $key => $techno){?>
-              <input type="checkbox" id="<?php echo $techno["nomtechno"]?>" name="techno[]" class="input-search" value="<?php echo $techno["id_techno"]?>">
-              <label for="<?php echo $techno["nomtechno"]?>"><?php echo $techno["nomtechno"]?></label>
-            <?php echo "<br>"; }; ?>
+                <input type="checkbox" id="<?php echo $techno["nomtechno"]?>" name="techno[]" class="input-search" value="<?php echo $techno["id_techno"]?>">
+                <label for="<?php echo $techno["nomtechno"]?>"><?php echo $techno["nomtechno"]?></label>
+                <?php echo "<br>"; }; ?>
 
-  </div>
-  </li>
-  <li>
-      
-       <!-- Modifie les photos du projet -->
-    <h2>Photo principale</h2>
-            <!-- Récupère l'image qui est en ligne actuellement -->
-    <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img_main"]?>" alt="" style="width:4rem">
-    <input name="img_main" type="file"  accept="image/jpeg" />
-  </li>
-  <li>
-  <h2>Photo numéro 2</h2>
-            <!-- Récupère l'image qui est en ligne actuellement -->
-    <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img1"]?>" alt="" style="width:4rem">
-    <input name="img1" type="file"  accept="image/jpeg" />
-  </li>
-  <li>
-  <h2>Photo numéro 3</h2>
-            <!-- Récupère l'image qui est en ligne actuellement -->
-    <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img2"]?>" alt="" style="width:4rem">
-    <input name="img2" type="file"  accept="image/jpeg" />
-  </li>
+            </div>
+        </li>
+        <li>
 
-  <li>
-    <!-- Modifie l'ordre du projet -->
-    <h2>Ordre</h2>
+            <!-- Modifie les photos du projet -->
+            <h2>Photo principale</h2>
+            <!-- Récupère l'image qui est en ligne actuellement -->
+            <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img_main"]?>" alt="" style="width:4rem">
+            <input name="img_main" type="file" accept="image/jpeg" />
+        </li>
+        <li>
+            <h2>Photo numéro 2</h2>
+            <!-- Récupère l'image qui est en ligne actuellement -->
+            <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img1"]?>" alt="" style="width:4rem">
+            <input name="img1" type="file" accept="image/jpeg" />
+        </li>
+        <li>
+            <h2>Photo numéro 3</h2>
+            <!-- Récupère l'image qui est en ligne actuellement -->
+            <img src="<?php echo $_url_base . $_dossier_template . $projetedit["img2"]?>" alt="" style="width:4rem">
+            <input name="img2" type="file" accept="image/jpeg" />
+        </li>
+
+        <li>
+            <!-- Modifie l'ordre du projet -->
+            <h2>Ordre</h2>
             <!-- Récupère le numéro qui est affiché actuellement -->
-    <input name="ordre" value="<?php echo $projetedit["ordre"] ?>">
-  </li>
+            <input name="ordre" value="<?php echo $projetedit["ordre"] ?>">
+        </li>
 
-  <li>
-    <!-- Modifie la mise en ligne du projet -->
-    <h2>Projet en ligne : </h2>
+        <li>
+            <!-- Modifie la mise en ligne du projet -->
+            <h2>Projet en ligne : </h2>
             <!-- Récupère le numéro qui est affiché actuellement -->
-    <?php    
+            <?php    
      if($projetedit["visible"] === "0" || empty($projetedit["visible"])){?>
-    <label for="online-oui">Oui</label>
-    <input id="online-oui" type="radio" name="visible" value="1">
-    <label for="online-non">Non</label>
-    <input id="online-non" type="radio" name="visible" value="0" checked>
-    <?php } else if($projetedit["visible"] === "1"){?>
-    <label for="online-oui">Oui</label>
-    <input id="online-oui" type="radio" name="visible" value="1" checked>
-    <label for="online-non">Non</label>
-    <input id="online-non" type="radio" name="visible" value="0">
-    <?php }; ?>
-  </li>
-  
-</ul>
+            <label for="online-oui">Oui</label>
+            <input id="online-oui" type="radio" name="visible" value="1">
+            <label for="online-non">Non</label>
+            <input id="online-non" type="radio" name="visible" value="0" checked>
+            <?php } else if($projetedit["visible"] === "1"){?>
+            <label for="online-oui">Oui</label>
+            <input id="online-oui" type="radio" name="visible" value="1" checked>
+            <label for="online-non">Non</label>
+            <input id="online-non" type="radio" name="visible" value="0">
+            <?php }; ?>
+        </li>
 
-<div class="flex" style="padding-top: 2rem">
-<button type="submit">Envoyer</button>
-<button type="button"><a href="<?php echo $_url_base ?>admin/projets/list_projets.php">Annuler</a></button>
-</div>
+    </ul>
+
+    <div class="flex" style="padding-top: 2rem">
+        <button type="submit">Envoyer</button>
+        <button type="button"><a href="<?php echo $_url_base ?>admin/projets/list_projets.php">Annuler</a></button>
+    </div>
 </form>
 <?php 
 include "../include/footer_admin.php"; ?>

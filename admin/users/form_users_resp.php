@@ -43,7 +43,3 @@ if(!empty($_POST)) {
         header ("location:list_users.php?useredit=$_POST[nom].$userID");
     }
 }
-
-
-
-
