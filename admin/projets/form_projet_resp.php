@@ -4,11 +4,11 @@ include "../../config.php";
 
 verif_connexion();
 
-if(!empty($_POST)) {
-
-    $chemin_img_main = "img/$_POST[titre]1.jpg";
+$chemin_img_main = "img/$_POST[titre]1.jpg";
     $chemin_img_2 = "img/$_POST[titre]2.jpg";
     $chemin_img_3 = "img/$_POST[titre]3.jpg";
+
+if(!empty($_POST)) {
     
     echo $chemin_img_2;
 
@@ -72,6 +72,8 @@ if(!empty($_POST)) {
                     ":img2" => $chemin_img_3,
                     ]);
         
+        $projetID = $bdd -> lastInsertId(); // lastInsertId retourne l'identifiant de la dernière ligne insérée en base de données. Ici, c'est l'ID de la techno que nous venons d'ajouter dans la base. SQL va lui assigner un id puisque l'incrémentation se fait automatique. J'encapsule cette valeur dans une variable $projetID pour pouvoir la traiter plus tard si besoin
+
         //Tentative de créer la liste des technos utilisées
           $request = $bdd -> prepare("INSERT INTO projets_technos (projet_id, techno_id) VALUE (:projet_id, :techno_id");
 
@@ -79,15 +81,13 @@ if(!empty($_POST)) {
               ":projet_id" => $projetID,
               ":techno_id" => $_POST["id_techno"],
       ]);
-        
-        $projetID = $bdd -> lastInsertId(); // lastInsertId retourne l'identifiant de la dernière ligne insérée en base de données. Ici, c'est l'ID de la techno que nous venons d'ajouter dans la base. SQL va lui assigner un id puisque l'incrémentation se fait automatique. J'encapsule cette valeur dans une variable $projetID pour pouvoir la traiter plus tard si besoin
-            
+                    
         header ("location:list_projets.php?newprojet=$_POST[titre].$projetID");
         exit;
 
     } else {
         // un id connu de ma $bdd est envoyé, alors je modifie un enregistrement.
-        $query = $bdd -> prepare("UPDATE projets SET titre=:titre, presentation=:presentation, lien=:lien, annee=:annee, ordre=:ordre, visible=:visible  WHERE id_projet = :idprojet");
+        $query = $bdd -> prepare("UPDATE projets SET titre=:titre, presentation=:presentation, lien=:lien, annee=:annee, ordre=:ordre, visible=:visible, img_main=:id_main, img1=:img1, img2=:img2 WHERE id_projet = :idprojet");
         
         $query -> execute([
             ":idprojet" => trim($_POST["id_projet"]),
@@ -97,6 +97,9 @@ if(!empty($_POST)) {
             ":annee" => trim($_POST["annee"]),
             ":ordre" => trim($_POST["ordre"]),
             ":visible" => trim($_POST["visible"]),
+            ":img_main" => $chemin_img_main,
+            ":img1" => $chemin_img_2,
+            ":img2" => $chemin_img_3,
         ]);
 
         //Modifie le lien source des images depuis le formulaire
@@ -104,16 +107,13 @@ if(!empty($_POST)) {
         $bdd -> query("UPDATE projets SET img1 = $chemin_img_2 WHERE id_projet = $_POST[id_projet]");
         $bdd -> query("UPDATE projets SET img_main = $chemin_img_main WHERE id_projet = $_POST[id_projet]");
 
-
         $projetID = $_POST["id_projet"]; 
 
         // Tentative de modifier la liste des technologies depuis le formulaire
-        if(isset($_POST["techno"])){
         $nbTechnoSelected = $_POST["techno"];
         foreach($nbTechnoSelected as $key => $technoSelected){
             $request = $bdd -> query("UPDATE projets_technos SET projet_id=$projetID, techno_id=:$technoSelected WHERE $_POST[id_projet]");
         };
-        }
          
         //vd($nbTechnoSelected);
 
