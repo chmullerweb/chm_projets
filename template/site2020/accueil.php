@@ -37,7 +37,7 @@
 </div>
 <div class="surprise bg-vert">
     <!--Faire un bouton : une autre citation et requête avec fetch random-->
-    <button class="randomquote">Surprise !</button>
+    <button class="randomquote" title="🔨 en cours 🔨">Surprise !</button>
 </div>
 
 <?php include "include/footer.php"?>
