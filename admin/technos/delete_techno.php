@@ -1,11 +1,11 @@
 <?php
-// Quand on a cliqué sur le lien "supprimer" dans la liste des menus.
+// Quand on a cliqué sur le lien "supprimer" dans la liste des technos
 
 include "../../config.php";
 
 verif_connexion(); // on ne peut pas acceder à la page sans être connecté.
 
-if(!isset($_GET["technodelete"])) { // on verifie que nous avons bien l'identifiant de notre menu à supprimer.
+if(!isset($_GET["technodelete"])) { // on verifie que nous avons bien l'identifiant de notre techno à supprimer.
     header ("location:list_technos.php?technodelete=vide");
 } else {
     $laTechno = uneTechno($_GET["technodelete"]);

@@ -21,7 +21,7 @@ global $bdd;
     <li>
         <h2><?php echo $techno["nomtechno"] ?></h2>
                 <a href="<?php echo $_url_base . "admin/technos/form_techno.php?technoedit=$techno[id_techno]"?>">Modifier</a>
-                <a <?php echo "onclick=\" return confirm('Voulez-vous effacer cette technologie?')\"" ?> href="<?php echo $_url_base . "admin/technos/delete_techno.php?technodelete=$techno[id_techno]"?>">Supprimer</a>
+                <a <?php echo "onclick=\" return confirm('Voulez-vous effacer cette technologie ?')\"" ?> href="<?php echo $_url_base . "admin/technos/delete_techno.php?technodelete=$techno[id_techno]"?>">Supprimer</a>
     </li>
     <?php }; ?>
     <li>
