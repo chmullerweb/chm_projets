@@ -1,4 +1,4 @@
-# chm_projets
+# monBook - chm_projets
 
 (en cours)
 Mon site portfolio pour présenter mes différents projets personnels. Le contenu du site est sauvegardé dans une base de données MySQL.
@@ -13,6 +13,7 @@ Ce site internet n'est pas encore consultable en ligne
 * Run MySQL avec votre logiciel de serveur Web local 
 * Installer la base de données pour récupérer le contenu du site dans votre application de gestion de base de données MySQL
 * Modifier le chemin $_url_base dans le fichier config.php
+* Les photos de base du projet se trouve dans admin/img_projet
 
 
 ## Réalisé Avec 
