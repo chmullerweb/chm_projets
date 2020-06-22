@@ -5,12 +5,13 @@
             <img class="pix-networks" src="template/site2020/img/github.png" alt="">
         </a>
     </div>
-
     <div class="linkedin flex">
         <p>LinkedIn</p>
         <a href="<?php echo $valreseau[0]["lien"]?>">
             <img class="pix-networks" src="template/site2020/img/linkedin.png" alt="">
         </a>
     </div>
-
 </footer>
+
+</body>
+</html>

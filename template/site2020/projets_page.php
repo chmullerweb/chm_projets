@@ -1,10 +1,7 @@
 <?php include "include/head.php";
 
-
 global $bdd;
-
 // on importe le contenu de la table technos de ma bdd
-
 $query = $bdd -> prepare("SELECT * from technos where iduu = :iduu");
 $query -> execute([":iduu" => "TEXT_TECHNO"]);
 $list_techno = $query ->  fetchAll(PDO::FETCH_ASSOC);
@@ -13,17 +10,13 @@ $list_techno = $query ->  fetchAll(PDO::FETCH_ASSOC);
 $query = $bdd -> prepare("SELECT * from projets where iduu = :iduu ORDER BY ordre ASC");
 $query -> execute([":iduu" => "TEXT_PROJET"]);
 $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
-
-
 ?>
 
 
 <div class="title">
     <h1>Mes projets</h1>
 </div>
-
 <section class="search bg-sapin">
-
     <div class="search-bloc flex">
         <img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" class="icone-search">
         <h2>Sélectionnez les projets qui vous intéresse :</h2>
@@ -41,11 +34,9 @@ $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
         </div>
     </form>
 </section>
-
 <section class="grid-projet">
     <!--    Pour chaque projet de ma table projets, je l'affiche -->
     <?php foreach($list_projet as $key => $projet){
-        
         // on importe le nomtechno de la bdd en passant par la table de jointure projets_techno
         // on sélectionne uniquement les technos utilisées pour le $projet via son id_projet
            $query = $bdd -> query("SELECT nomtechno from projets_technos, projets, technos where 
@@ -59,30 +50,24 @@ $list_projet = $query ->  fetchAll(PDO::FETCH_ASSOC);
     if($projet["visible"] === 0 || empty($projet["visible"])){
 
     } else {  ?>
-
-    <figure class="bloc-pix-projet" style="margin:0">
-        <img class="projet-pix" src="<?php echo $_dossier_template . $projet["img_main"]?>" alt="">
-        <figcaption>
-            <h3><?php echo $projet["titre"]?></h3>
-            <p>Langages :
+        <figure class="bloc-pix-projet" style="margin:0">
+            <img class="projet-pix" src="<?php echo $_dossier_template . $projet["img_main"]?>" alt="">
+            <figcaption>
+                <h3><?php echo $projet["titre"]?></h3>
+                <p>Langages :
                 <?php 
-
-            foreach($technologies as $key => $techno){
-            echo $techno["nomtechno"] . " - ";    
-     };
-            
-            ?>
-            </p>
-            <a href="<?php echo $_url_base . "projet.php?projetselect=" . $projet["id_projet"]?>"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
-        </figcaption>
-    </figure>
-    <?php 
-};
-};
-?>
+                foreach($technologies as $key => $techno){
+                    echo $techno["nomtechno"] . " - ";    
+                };
+                ?>
+                </p>
+                    <a href="<?php echo $_url_base . "projet.php?projetselect=" . $projet["id_projet"]?>"><img src="<?php echo $_dossier_template ?>img/zoom.png" alt="" style="width:2rem"></a>
+            </figcaption>
+        </figure>
+<?php }; }; ?>
 </section>
 
 
-
 <?php
-include "include/footer.php"?>
+include "include/footer.php";
+?>

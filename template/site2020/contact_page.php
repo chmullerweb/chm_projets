@@ -1,21 +1,16 @@
 <?php include "include/head.php";
 
 // on importe le contenu de la table reseaux de ma bdd
-
 global $bdd;
 
 $query = $bdd -> prepare("SELECT * from reseaux where iduu = :iduu");
 $query -> execute([":iduu" => "TEXT_RESEAU"]);
 $valreseau = $query ->  fetchAll(PDO::FETCH_ASSOC);
-
 ?>
-?>
-
 
 <div class="title">
     <h1>Vous souhaitez me contacter ?</h1>
 </div>
-
 <figure class="bloc-contact phone">
     <img class="contact-pix" src="<?php echo $_dossier_template ?>img/phone.png" alt="">
     <figcaption class="figcaption-contact">
@@ -52,4 +47,4 @@ $valreseau = $query ->  fetchAll(PDO::FETCH_ASSOC);
 </figure>
 
 
-<?php include "include/footer.php"?>
+<?php include "include/footer.php";?>

@@ -27,7 +27,6 @@
 
 
 <body class="grid">
-
     <header class="nav">
         <nav>
             <ul class="flex">

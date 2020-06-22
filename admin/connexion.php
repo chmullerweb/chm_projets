@@ -19,7 +19,6 @@ include "include/head_admin.php";
         </li>
     </ul>
     <button type="submit">Valider</button>
-
 </form>
 
 <footer class="nav">

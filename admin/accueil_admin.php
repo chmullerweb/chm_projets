@@ -40,8 +40,7 @@ $user = $_SESSION["connected_user"];
         </nav>
 </footer>
 
-</body>
-</html>
+
 
 
 
