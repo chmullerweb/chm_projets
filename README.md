@@ -1,7 +1,7 @@
 # monBook - chm_projets
 
 (en cours)
-Mon site portfolio pour présenter mes différents projets personnels. Le contenu du site est sauvegardé dans une base de données MySQL.
+Mon site portfolio pour présenter mes différents projets personnels. Le contenu du site est sauvegardé dans une base de données MySQL. Le design est minimaliste et utilise CSS GRID.
 
 ## URL du site
 
@@ -15,6 +15,11 @@ Ce site internet n'est pas encore consultable en ligne
 * Modifier le chemin $_url_base dans le fichier config.php
 * Les photos de base du projet se trouve dans admin/img_projet
 
+### Accès
+
+Pour éditer la base de donnéés, vous pouvez passer par l'administration (chemin à configurer) : localhost/monbook/admin/connexion.php
+Par sécurité, les accès ne sont pas donnés dans le code directement (présents uniquement dans la $bdd).
+Des indices se cachent dans les input pour vous aider à vous connecter à l'administration. 
 
 ## Réalisé Avec 
 
