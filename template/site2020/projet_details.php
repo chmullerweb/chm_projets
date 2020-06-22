@@ -56,7 +56,7 @@
         $post = $projet_select["id_projet"]- 1;
         $next = $projet_select["id_projet"]+ 1;
 
-        $query = $bdd -> query("SELECT id_projet from projets");
+        $query = $bdd -> query("SELECT id_projet FROM projets WHERE visible=1 ");
         $nbIdProjet = $query ->  fetchAll(PDO::FETCH_ASSOC);
          
         if($post === 0){
