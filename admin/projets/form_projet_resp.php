@@ -96,7 +96,7 @@ if(!empty($_POST)) {
     
     
     //
-    // si le formulaire de projet n'est pas vide et s'il n'a pas d'id (id_projet == 0), alors j'ajoute la saisie à ma bdd
+    // si le formulaire de projet est pas vide et s'il n'a pas d'id (id_projet == 0), alors j'ajoute la saisie à ma bdd
     //
 
     if(empty($_POST["id_projet"]) || $_POST["id_projet"] == 0) {
@@ -107,15 +107,15 @@ if(!empty($_POST)) {
                                  VALUES (:titre, :presentation, :lien, :annee, :ordre, :visible, :img_main, :img1, :img2)");
                                                                  
         $query -> execute([
-                    ":nom" => trim($_POST["titre"]),
+                    ":titre" => trim($_POST["titre"]),
                     ":presentation" => trim($_POST["presentation"]),
                     ":lien" => trim($_POST["lien"]),
                     ":annee" => trim($_POST["annee"]),
                     ":ordre" => trim($_POST["ordre"]),
                     ":visible" => trim($_POST["visible"]),
-                    ":img_main" => "img/$_POST[titre]1.jpg",
+                    ":img_main" => $chemin_img_main,
                     ":img1" => $chemin_img_2,
-                    ":img2" => "img/$_POST[titre]3.jpg",
+                    ":img2" => $chemin_img_3,
                     ]);
         
         $projetID = $bdd -> lastInsertId(); // lastInsertId retourne l'identifiant de la dernière ligne insérée en base de données. Ici, c'est l'ID de la techno que nous venons d'ajouter dans la base. SQL va lui assigner un id puisque l'incrémentation se fait automatique. J'encapsule cette valeur dans une variable $projetID pour pouvoir la traiter plus tard si besoin
@@ -134,7 +134,7 @@ if(!empty($_POST)) {
 
     } else {
         // un id connu de ma $bdd est envoyé, alors je modifie un enregistrement.
-        $query = $bdd -> prepare("UPDATE projets SET titre=:titre, presentation=:presentation, lien=:lien, annee=:annee, ordre=:ordre, visible=:visible img_main=:img_main, img1=:img1, img2=:img2 WHERE id_projet = :idprojet");
+        $query = $bdd -> prepare("UPDATE projets SET titre=:titre, presentation=:presentation, lien=:lien, annee=:annee, ordre=:ordre, visible=:visible  WHERE id_projet = :idprojet");
         
         $query -> execute([
             ":idprojet" => trim($_POST["id_projet"]),
@@ -144,12 +144,9 @@ if(!empty($_POST)) {
             ":annee" => trim($_POST["annee"]),
             ":ordre" => trim($_POST["ordre"]),
             ":visible" => trim($_POST["visible"]),
-            ":img_main" => "img/$_POST[titre]1.jpg",
-            ":img1" => $chemin_img_2,
-            ":img2" => "img/$_POST[titre]3.jpg",
         ]);
 
-        //Tentative de modifier le lien source des images depuis le formulaire
+        //Modifie le lien source des images depuis le formulaire
         $bdd -> query("UPDATE projets SET img2 = $chemin_img_3 WHERE id_projet = $_POST[id_projet]");
         $bdd -> query("UPDATE projets SET img1 = $chemin_img_2 WHERE id_projet = $_POST[id_projet]");
         $bdd -> query("UPDATE projets SET img_main = $chemin_img_main WHERE id_projet = $_POST[id_projet]");

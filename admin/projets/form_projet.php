@@ -27,6 +27,7 @@ if(!empty($_GET["projetedit"])) {
       $technologies = $request -> fetchAll(PDO::FETCH_ASSOC);
 
 } else {
+  $projetedit = [];
   $projetedit["titre"] = "";
   $projetedit["presentation"] = ""; 
   $projetedit["lien"] = "";
