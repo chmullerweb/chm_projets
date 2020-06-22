@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 21 juin 2020 à 23:37
+-- Généré le : lun. 22 juin 2020 à 16:23
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.4
 
@@ -40,7 +40,7 @@ CREATE TABLE `accueil` (
 --
 
 INSERT INTO `accueil` (`id_accueil`, `nomprofil`, `claim`, `intro`, `iduu`) VALUES
-(1, 'Nicolas Tintin', 'Les oiseaux c\'est 1croyab', 'Un sympathique site vitrine pour vous faire découvrir mes créations en développement web.', 'TEXT_ACCUEIL');
+(1, 'Charlotte Muller', 'Everybody can coding', 'Un sympathique site vitrine pour vous faire découvrir mes créations en développement web.', 'TEXT_ACCUEIL');
 
 -- --------------------------------------------------------
 
@@ -80,8 +80,11 @@ CREATE TABLE `projets` (
 INSERT INTO `projets` (`id_projet`, `iduu`, `titre`, `presentation`, `lien`, `annee`, `visible`, `ordre`, `img_main`, `img1`, `img2`) VALUES
 (1, 'TEXT_PROJET', 'Museum', 'Site fictif d\'un musée d\'art moderne', '', 2020, 1, 1, 'img/Museum1.jpg', 'img/Museum2.jpg', 'img/Museum3.jpg'),
 (2, 'TEXT_PROJET', 'Codevores', 'Site fictif de mise en relation entre professionnelles du digital et des recruteurs', 'https://chmullerweb.github.io/CODEVORES.CO/', 2020, 1, 2, 'img/Codevores1.jpg', 'img/Codevores2.jpg', 'img/Codevores3.jpg'),
-(3, 'TEXT_PROJET', 'Las Venturas Hospital', 'Site d\'un hôpital aux soins acidulés kkkkk', 'https://github.com/chmullerweb?tab=repositories', 2020, 1, 3, 'img/lasVenturasHospital1.jpg', 'img/lasVenturasHospital2.jpg', 'img/lasVenturasHospital3.jpg'),
-(5, 'TEXT_PROJET', 'Paul', '', 'https://github.com/chmullerweb?tab=repositories', 0, 0, 0, NULL, NULL, NULL);
+(3, 'TEXT_PROJET', 'Las Venturas Hospital', 'Site d\'un hôpital aux soins acidulés', 'https://github.com/chmullerweb?tab=repositories', 2020, 1, 3, 'img/lasVenturasHospital1.jpg', 'img/lasVenturasHospital2.jpg', 'img/lasVenturasHospital3.jpg'),
+(5, 'TEXT_PROJET', 'Paul', 'test', 'https://github.com/chmullerweb?tab=repositories', 2021, 0, 6, 'img/Paul1.jpg', NULL, NULL),
+(6, 'TEXT_PROJET', 'baba', 'lalala', 'url', 2020, 0, 8, NULL, NULL, NULL),
+(7, 'TEXT_PROJET', 'Grosbidon', '', '', 0, 0, 0, 'img/Grosbidon1.jpg', 'img/Grosbidon2.jpg', 'img/Grosbidon3.jpg'),
+(10, 'TEXT_PROJET', 'Hello', '', '', 0, 0, 9, 'img/Hello1.jpg', 'img/Hello2.jpg', 'img/Hello3.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,6 +93,7 @@ INSERT INTO `projets` (`id_projet`, `iduu`, `titre`, `presentation`, `lien`, `an
 --
 
 CREATE TABLE `projets_technos` (
+  `id_projets_technos` int(11) NOT NULL,
   `projet_id` int(11) NOT NULL,
   `techno_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -98,9 +102,23 @@ CREATE TABLE `projets_technos` (
 -- Déchargement des données de la table `projets_technos`
 --
 
-INSERT INTO `projets_technos` (`projet_id`, `techno_id`) VALUES
-(5, 20),
-(5, 20);
+INSERT INTO `projets_technos` (`id_projets_technos`, `projet_id`, `techno_id`) VALUES
+(1, 5, 25),
+(2, 5, 2),
+(3, 3, 2),
+(5, 2, 6),
+(8, 1, 25),
+(9, 1, 2),
+(10, 1, 5),
+(11, 1, 20),
+(12, 1, 4),
+(13, 2, 25),
+(14, 2, 6),
+(15, 2, 7),
+(16, 2, 2),
+(17, 2, 3),
+(18, 3, 6),
+(19, 3, 25);
 
 -- --------------------------------------------------------
 
@@ -149,7 +167,8 @@ INSERT INTO `technos` (`id_techno`, `iduu`, `nomtechno`) VALUES
 (6, 'TEXT_TECHNO', 'bootstrap'),
 (7, 'TEXT_TECHNO', 'bulma'),
 (10, 'TEXT_TECHNO', 'node.js'),
-(20, 'TEXT_TECHNO', 'MySQL');
+(20, 'TEXT_TECHNO', 'MySQL'),
+(25, 'TEXT_TECHNO', 'HTML5');
 
 -- --------------------------------------------------------
 
@@ -170,7 +189,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_admin`, `nom`, `identifiant`, `motdepasse`) VALUES
 (1, 'Nicolas', 'nicolas', '007'),
-(2, 'Bob', 'bob', 'leponge');
+(2, 'Bob', 'bob', 'leponge'),
+(3, 'Muller', 'muller', 'cha');
 
 --
 -- Index pour les tables déchargées
@@ -195,6 +215,12 @@ ALTER TABLE `hobbies`
 ALTER TABLE `projets`
   ADD PRIMARY KEY (`id_projet`),
   ADD UNIQUE KEY `ordre` (`ordre`);
+
+--
+-- Index pour la table `projets_technos`
+--
+ALTER TABLE `projets_technos`
+  ADD PRIMARY KEY (`id_projets_technos`);
 
 --
 -- Index pour la table `reseaux`
@@ -229,7 +255,13 @@ ALTER TABLE `accueil`
 -- AUTO_INCREMENT pour la table `projets`
 --
 ALTER TABLE `projets`
-  MODIFY `id_projet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_projet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `projets_technos`
+--
+ALTER TABLE `projets_technos`
+  MODIFY `id_projets_technos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `reseaux`
@@ -241,13 +273,13 @@ ALTER TABLE `reseaux`
 -- AUTO_INCREMENT pour la table `technos`
 --
 ALTER TABLE `technos`
-  MODIFY `id_techno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_techno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
